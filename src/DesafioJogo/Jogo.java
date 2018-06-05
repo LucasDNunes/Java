@@ -66,11 +66,11 @@ public class Jogo {
 		t.insereNaPosicao('e', 21);
 		sa.empilha(3);
 		t.insereNaPosicao('x', 22);
-		sa.empilha(2);
+		sa.empilha(3);
 		t.insereNaPosicao('y', 23);
-		sa.empilha(4);
+		sa.empilha(3);
 		t.insereUltimo('z');
-		sa.empilha(1);
+		sa.empilha(3);
 
 		j1.propria = p1;
 		j2.propria = p2;
@@ -83,36 +83,39 @@ public class Jogo {
 		j3.posicao = t.primeiro;
 
 		cria(p1, pa, "1");
-		cria(p2, pb, "1");
-		cria(p3, pc, "1");
+		cria(p2, pb, "2");
+		cria(p3, pc, "3");
 
 		do {
+			//jogador 1
 			if (!j1.perdeJogada) {
 				vez(j1, p2, pb, "1");
 
-				if (j1.jogada) {
-					vez(j1, p2, pb, "1");
+				while (j1.jogada) {
 					j1.setJogada(false);
+					vez(j1, p2, pb, "1");					
 				}
 			} else
 				j1.setPerdeJogada(false);
-
+			
+			//jogador 2
 			if (!j2.perdeJogada) {
 				vez(j2, p3, pc, "2");
 
-				if (j2.jogada) {
-					vez(j2, p3, pc, "2");
+				while (j2.jogada) {
 					j2.setJogada(false);
+					vez(j2, p3, pc, "2");					
 				}
 			} else
 				j2.setPerdeJogada(false);
-
+			
+			//jogador 3
 			if (!j3.perdeJogada) {
 				vez(j3, p1, pa, "3");
 
-				if (j3.jogada) {
-					vez(j3, p1, pa, "3");
+				while (j3.jogada) {
 					j3.setJogada(false);
+					vez(j3, p1, pa, "3");					
 				}
 			} else
 				j3.setPerdeJogada(false);
