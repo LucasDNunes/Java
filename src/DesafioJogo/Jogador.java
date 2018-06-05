@@ -7,6 +7,7 @@ public class Jogador {
 	Palavra adivinhar;
 	boolean ganhador;
 	boolean jogada;
+	boolean perdeJogada;
 
 	public Jogador() {
 		posicao = null;
@@ -14,8 +15,17 @@ public class Jogador {
 		adivinhar = null;
 		ganhador = false;
 		jogada = false;
+		perdeJogada = false;
+	}
+	
+	public boolean isPerdeJogada() {
+		return perdeJogada;
 	}
 
+
+	public void setPerdeJogada(boolean perdeJogada) {
+		this.perdeJogada = perdeJogada;
+	}
 	
 	public boolean isJogada() {
 		return jogada;

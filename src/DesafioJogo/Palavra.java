@@ -157,4 +157,8 @@ public class Palavra {
 	public void ganhaJogada(Jogador j) {
 		j.setJogada(true);
 	}
+	
+	public void perdeJogada(Jogador j) {
+		j.setPerdeJogada(true);
+	}
 }

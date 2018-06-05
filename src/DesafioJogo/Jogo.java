@@ -125,13 +125,20 @@ public class Jogo {
 //				paradaJogador(j1, p2, pb);
 //			}
 //			
-			jogar("1",j1,p2,pb);
+			if (!j1.perdeJogada) {
+				jogar("1",j1,p2,pb);
+			}
 			
 			if (j1.jogada) {
 				JOptionPane.showMessageDialog(null, "Você ganhou outra jogada!");
 				jogar("1",j1, p2, pb);
+				j1.setJogada(false);
 			}
-			j1.setJogada(false);
+			
+			if (j1.perdeJogada) {
+				j1.setPerdeJogada(false);
+			}
+			
 
 //			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 2----- \n\n1 - Avançar \n 2- Retroceder"));
 //			if (op == 1) {
@@ -143,12 +150,20 @@ public class Jogo {
 //				paradaJogador(j2, p3, pc);
 //			}
 			
-			jogar("2",j2,p3,pc);
+			if (!j2.perdeJogada) {
+				jogar("2",j2,p3,pc);
+			}
+			
+			if (j2.perdeJogada) {
+				j2.setPerdeJogada(false);
+			}
+			
 			if (j2.jogada) {
 				JOptionPane.showMessageDialog(null, "Você ganhou outra jogada!");
 				jogar("2",j2, p3, pc);
+				j2.setJogada(false);
 			}
-			j2.setJogada(false);
+			
 			
 //			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 3----- \n\n1 - Avançar \n 2- Retroceder"));
 //			if (op == 1) {
@@ -159,13 +174,21 @@ public class Jogo {
 //				retrocedeJogador(j3);
 //				paradaJogador(j3, p1, pa);
 //			}
-			jogar("3",j2,p3,pc);
+			
+			if (!j3.perdeJogada) {
+				jogar("3",j3,p1,pa);
+			}
+			
+			if (j3.perdeJogada) {
+				j3.setPerdeJogada(false);
+			}			
 			
 			if (j3.jogada) {
 				JOptionPane.showMessageDialog(null, "Você ganhou outra jogada!");
 				jogar("3",j3, p1, pa);
+				j3.setJogada(false);
 			}
-			j3.setJogada(false);
+			
 			
 			//System.out.println(op);
 		} while ((j1.ganhador == false) & (j2.ganhador == false) & (j3.ganhador == false));
@@ -233,7 +256,7 @@ public class Jogo {
 						adivinha.ganhaJogada(j);
 						break;
 					case 4:
-						// perdeJogada();
+						adivinha.perdeJogada(j);
 						break;
 					case 5:
 						ganhaJogo(j);
@@ -255,7 +278,7 @@ public class Jogo {
 					adivinha.ganhaJogada(j);
 					break;
 				case 4:
-					// perdeJogada();
+					adivinha.perdeJogada(j);
 					break;
 				case 5:
 					ganhaJogo(j);
@@ -263,6 +286,7 @@ public class Jogo {
 				}
 			}
 		} else {
+			JOptionPane.showMessageDialog(null, "Sorte ou azar.");
 			int aux = sa.desempilha();
 			switch (aux) {
 			case 1:
@@ -275,10 +299,10 @@ public class Jogo {
 				adivinha.ganhaJogada(j);
 				break;
 			case 4:
-				// perdeJogada();
+				adivinha.perdeJogada(j);
 				break;
 			case 5:
-				// ganhaJogo();
+				ganhaJogo(j);
 				break;
 			}
 		}
