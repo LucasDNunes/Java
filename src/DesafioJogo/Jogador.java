@@ -5,7 +5,6 @@ public class Jogador {
 	ElementoD posicao;
 	Palavra propria;
 	Palavra adivinhar;
-	boolean ganhador;
 	boolean jogada;
 	boolean perdeJogada;
 
@@ -13,7 +12,6 @@ public class Jogador {
 		posicao = null;
 		propria = null;
 		adivinhar = null;
-		ganhador = false;
 		jogada = false;
 		perdeJogada = false;
 	}

@@ -1,7 +1,5 @@
 package DesafioJogo;
 
-import javax.swing.JOptionPane;
-
 public class Palavra {
 
 	private ElementoD primeiro, ultimo, atual;
@@ -33,7 +31,6 @@ public class Palavra {
 		}
 		if (secreta.equals(t))
 			correto = true;
-		System.out.println(correto);
 		return correto;
 	}
 
@@ -54,7 +51,6 @@ public class Palavra {
 	}
 
 	public void insere(char l) {
-
 		ElementoD novo = new ElementoD(l);
 		if (estaVazio()) {
 			primeiro = novo;
@@ -110,54 +106,76 @@ public class Palavra {
 		return -1;
 	}
 
-	public void removeLetra() {
+	public boolean removeLetra() {
 		atual = primeiro;
-		do {
-			if (atual.letra == '*')
-				atual = atual.proximo;
-			else {
-				char l = atual.letra;
-				atual = primeiro;
-				while (atual.proximo != null) {
-					if (atual.letra == l)
-						atual.letra = '*';
+		boolean tem = false;
+		if (primeiro.letra == '*') {
+			while ((atual.letra == '*') && (atual.proximo != null)) {
+				if (atual.letra == '*') {
 					atual = atual.proximo;
 				}
-				if (atual.letra == l) {
-					atual.letra = '*';
+				if (atual.letra != '*') {
+					tem = true;
+					char l = atual.letra;
+					atual = primeiro;
+					while (atual.proximo != null) {
+						if (atual.letra == l)
+							atual.letra = '*';
+						atual = atual.proximo;
+					}
+					if (atual.letra == l) {
+						tem = true;
+						atual.letra = '*';
+					}
 				}
-				JOptionPane.showMessageDialog(null,
-						"Foi removida a letra - " + l + "\n  sua palavra : " + this.toString());
-				return;
 			}
-		} while (atual.proximo != null);
-
+		} else {
+			tem = true;
+			char l = atual.letra;
+			while (atual.proximo != null) {
+				if (atual.letra == l)
+					atual.letra = '*';
+				atual = atual.proximo;
+			}
+			if (atual.letra == l) {
+				tem = true;
+				atual.letra = '*';
+			}
+		}
+		return tem;
 	}
 
-	public void insereLetra(Palavra r) {
+	public void insereLetra(Palavra palavra) {
 		atual = primeiro;
+		palavra.atual = palavra.primeiro;
+		char l;
 		do {
-			if (atual.letra == '*') {
-				atual.letra = r.atual.letra;
-				JOptionPane.showMessageDialog(null,
-						"Foi adicionado a letra - " + r.atual.letra + "\n sua palavra: " + this.toString());
-				return;
+			if (atual.letra == '*')
+				l = palavra.atual.letra;
+			else {
+				if (atual.proximo != null)
+					atual = atual.proximo;
+				if (palavra.atual.proximo != null)
+					palavra.atual = palavra.atual.proximo;
 			}
 		} while (atual.letra != '*');
-
-		char l = atual.letra;
+		l = palavra.atual.letra;
 		atual = primeiro;
+		palavra.atual = palavra.primeiro;
 		while (atual.proximo != null) {
-			if (l == r.atual.letra)
-				atual.letra = r.atual.letra;
-			r.atual = r.atual.proximo;
+			if (l == palavra.atual.letra)
+				atual.letra = palavra.atual.letra;
+			atual = atual.proximo;
+			palavra.atual = palavra.atual.proximo;
 		}
+		if (l == palavra.atual.letra)
+			atual.letra = palavra.atual.letra;
 	}
 
 	public void ganhaJogada(Jogador j) {
 		j.setJogada(true);
 	}
-	
+
 	public void perdeJogada(Jogador j) {
 		j.setPerdeJogada(true);
 	}

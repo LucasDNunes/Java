@@ -9,8 +9,8 @@ public class SorteAzar {
 		public SorteAzar() {
 		}
 
-		public boolean estaVazia() {
-			return topo == null;
+		public boolean estaCheia() {
+			return topo != null;
 		}
 
 		public void empilha(int v) {

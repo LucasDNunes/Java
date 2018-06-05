@@ -25,6 +25,7 @@ public class Tabuleiro {
 	public void insereUltimo(char l) {
 		ElementoD novo = new ElementoD(l);
 		atual.proximo = novo;
+		novo.anterior = atual;
 		ultimo = novo;
 		atual = primeiro;
 	}
