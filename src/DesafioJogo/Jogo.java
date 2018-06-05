@@ -112,40 +112,77 @@ public class Jogo {
 			pc.insere(l);
 		}
 
-		int op;
+		//int op;
 		do {
-			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 1----- \n\n1 - Avançar \n 2- Retroceder"));
+//			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 1----- \n\n1 - Avançar \n 2- Retroceder"));
+//
+//			if (op == 1) {
+//				avancarJogador(j1);
+//				paradaJogador(j1, p2, pb);
+//			}
+//			if (op == 2) {
+//				retrocedeJogador(j1);
+//				paradaJogador(j1, p2, pb);
+//			}
+//			
+			jogar("1",j1,p2,pb);
+			
+			if (j1.jogada) {
+				JOptionPane.showMessageDialog(null, "Você ganhou outra jogada!");
+				jogar("1",j1, p2, pb);
+			}
+			j1.setJogada(false);
 
-			if (op == 1) {
-				avancarJogador(j1);
-				paradaJogador(j1, p2, pb);
+//			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 2----- \n\n1 - Avançar \n 2- Retroceder"));
+//			if (op == 1) {
+//				avancarJogador(j2);
+//				paradaJogador(j2, p3, pc);
+//			}
+//			if (op == 2) {
+//				retrocedeJogador(j2);
+//				paradaJogador(j2, p3, pc);
+//			}
+			
+			jogar("2",j2,p3,pc);
+			if (j2.jogada) {
+				JOptionPane.showMessageDialog(null, "Você ganhou outra jogada!");
+				jogar("2",j2, p3, pc);
 			}
-			if (op == 2) {
-				retrocedeJogador(j1);
-				paradaJogador(j1, p2, pb);
+			j2.setJogada(false);
+			
+//			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 3----- \n\n1 - Avançar \n 2- Retroceder"));
+//			if (op == 1) {
+//				avancarJogador(j3);
+//				paradaJogador(j3, p1, pa);
+//			}
+//			if (op == 2) {
+//				retrocedeJogador(j3);
+//				paradaJogador(j3, p1, pa);
+//			}
+			jogar("3",j2,p3,pc);
+			
+			if (j3.jogada) {
+				JOptionPane.showMessageDialog(null, "Você ganhou outra jogada!");
+				jogar("3",j3, p1, pa);
 			}
-
-			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 2----- \n\n1 - Avançar \n 2- Retroceder"));
-			if (op == 1) {
-				avancarJogador(j2);
-				paradaJogador(j2, p3, pc);
-			}
-			if (op == 2) {
-				retrocedeJogador(j2);
-				paradaJogador(j2, p3, pc);
-			}
-
-			op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador 3----- \n\n1 - Avançar \n 2- Retroceder"));
-			if (op == 1) {
-				avancarJogador(j3);
-				paradaJogador(j3, p1, pa);
-			}
-			if (op == 2) {
-				retrocedeJogador(j3);
-				paradaJogador(j3, p1, pa);
-			}
-			System.out.println(op);
+			j3.setJogada(false);
+			
+			//System.out.println(op);
 		} while ((j1.ganhador == false) & (j2.ganhador == false) & (j3.ganhador == false));
+	}
+	
+	public static void jogar(String n, Jogador j,Palavra palavra, Palavra adivinha) {
+		int op;
+		op = Integer.parseInt(JOptionPane.showInputDialog("-----Jogador "+ n +"----- \n\n1 - Avançar \n 2- Retroceder"));
+
+		if (op == 1) {
+			avancarJogador(j);
+			paradaJogador(j, palavra, adivinha);
+		}
+		if (op == 2) {
+			retrocedeJogador(j);
+			paradaJogador(j, palavra, adivinha);
+		}
 	}
 
 	public static void avancarJogador(Jogador j) {
@@ -193,7 +230,7 @@ public class Jogo {
 						adivinha.insereLetra(palavra);
 						break;
 					case 3:
-						// ganhaJogada();
+						adivinha.ganhaJogada(j);
 						break;
 					case 4:
 						// perdeJogada();
@@ -215,7 +252,7 @@ public class Jogo {
 					adivinha.insereLetra(palavra);
 					break;
 				case 3:
-					// ganhaJogada();
+					adivinha.ganhaJogada(j);
 					break;
 				case 4:
 					// perdeJogada();
@@ -235,7 +272,7 @@ public class Jogo {
 				adivinha.insereLetra(palavra);
 				break;
 			case 3:
-				// ganhaJogada();
+				adivinha.ganhaJogada(j);
 				break;
 			case 4:
 				// perdeJogada();

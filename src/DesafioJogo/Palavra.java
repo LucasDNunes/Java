@@ -126,11 +126,12 @@ public class Palavra {
 				if (atual.letra == l) {
 					atual.letra = '*';
 				}
-				JOptionPane.showMessageDialog(null, "Foi removida a letra - "+ l + "\n  sua palavra : " + this.toString());
+				JOptionPane.showMessageDialog(null,
+						"Foi removida a letra - " + l + "\n  sua palavra : " + this.toString());
 				return;
 			}
 		} while (atual.proximo != null);
-		
+
 	}
 
 	public void insereLetra(Palavra r) {
@@ -138,11 +139,12 @@ public class Palavra {
 		do {
 			if (atual.letra == '*') {
 				atual.letra = r.atual.letra;
-				JOptionPane.showMessageDialog(null, "Foi adicionado a letra - "+ r.atual.letra + "\n sua palavra: " + this.toString());
+				JOptionPane.showMessageDialog(null,
+						"Foi adicionado a letra - " + r.atual.letra + "\n sua palavra: " + this.toString());
 				return;
 			}
 		} while (atual.letra != '*');
-		
+
 		char l = atual.letra;
 		atual = primeiro;
 		while (atual.proximo != null) {
@@ -150,5 +152,9 @@ public class Palavra {
 				atual.letra = r.atual.letra;
 			r.atual = r.atual.proximo;
 		}
+	}
+
+	public void ganhaJogada(Jogador j) {
+		j.setJogada(true);
 	}
 }
