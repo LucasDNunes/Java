@@ -1,5 +1,4 @@
 package DesafioJogo;
-
 public class Tabuleiro {
 
 	public ElementoD primeiro, ultimo, atual;

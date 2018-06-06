@@ -1,5 +1,4 @@
 package DesafioJogo;
-
 public class Palavra {
 
 	private ElementoD primeiro, ultimo, atual;

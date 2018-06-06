@@ -1,7 +1,5 @@
 package DesafioJogo;
 
-import Fila.Elemento;
-
 public class SorteAzar {
 
 		private Elemento topo = null;

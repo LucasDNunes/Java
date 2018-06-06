@@ -1,5 +1,4 @@
 package DesafioJogo;
-
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -66,11 +65,11 @@ public class Jogo {
 		t.insereNaPosicao('e', 21);
 		sa.empilha(3);
 		t.insereNaPosicao('x', 22);
-		sa.empilha(3);
+		sa.empilha(2);
 		t.insereNaPosicao('y', 23);
-		sa.empilha(3);
+		sa.empilha(4);
 		t.insereUltimo('z');
-		sa.empilha(3);
+		sa.empilha(1);
 
 		j1.propria = p1;
 		j2.propria = p2;
@@ -87,35 +86,32 @@ public class Jogo {
 		cria(p3, pc, "3");
 
 		do {
-			//jogador 1
 			if (!j1.perdeJogada) {
 				vez(j1, p2, pb, "1");
 
 				while (j1.jogada) {
 					j1.setJogada(false);
-					vez(j1, p2, pb, "1");					
+					vez(j1, p2, pb, "1");
 				}
 			} else
 				j1.setPerdeJogada(false);
-			
-			//jogador 2
+
 			if (!j2.perdeJogada) {
 				vez(j2, p3, pc, "2");
 
 				while (j2.jogada) {
 					j2.setJogada(false);
-					vez(j2, p3, pc, "2");					
+					vez(j2, p3, pc, "2");
 				}
 			} else
 				j2.setPerdeJogada(false);
-			
-			//jogador 3
+
 			if (!j3.perdeJogada) {
 				vez(j3, p1, pa, "3");
 
 				while (j3.jogada) {
 					j3.setJogada(false);
-					vez(j3, p1, pa, "3");					
+					vez(j3, p1, pa, "3");
 				}
 			} else
 				j3.setPerdeJogada(false);

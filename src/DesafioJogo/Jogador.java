@@ -1,5 +1,4 @@
 package DesafioJogo;
-
 public class Jogador {
 
 	ElementoD posicao;

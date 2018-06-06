@@ -1,5 +1,4 @@
 package DesafioJogo;
-
 	public class ElementoD {
 		public char letra;
 		public ElementoD proximo;
