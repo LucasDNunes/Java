@@ -1,4 +1,4 @@
-package Arvore;
+package ArvoreBinariaBusca;
 
 public class NodeAB {
 	public int info;

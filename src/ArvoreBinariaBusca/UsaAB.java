@@ -1,4 +1,4 @@
-package Arvore;
+package ArvoreBinariaBusca;
 
 public class UsaAB {
 	public static void main(String[] args){
