@@ -45,9 +45,17 @@ public class TesteLambda {
 		lista.add(cc3);
 		lista.add(cc4);
 		
-		lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()) );
+//		lista.sort( (Conta c1, Conta c2) -> {//lambda tem que usar a seta
+//				return Integer.compare(c1.getNumero(), c2.getNumero());
+//			}
+//		);
 		
-		Comparator<Conta> comp = (Conta c1, Conta c2) -> {
+		//com uma linha o cod a cima
+		lista.sort( 
+				(c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero())
+		);
+		
+		Comparator<Conta> comp = (Conta c1, Conta c2)-> {
 				String nomeC1 = c1.getTitular().getNome();
 				String nomeC2 = c2.getTitular().getNome();
 				return nomeC1.compareTo(nomeC2);
@@ -55,7 +63,16 @@ public class TesteLambda {
 		
 		lista.sort( comp );
 		
-		lista.forEach( (conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()));
+//		lista.forEach(new Consumer<Conta>() {
+//			@Override
+//			public void accept(Conta conta) {
+//				System.out.println(conta + ", " + conta.getTitular().getNome());	
+//			}
+//		});
+		
+		lista.forEach( 
+				(conta) -> System.out.println(conta + ", " + conta.getTitular().getNome())
+		);
 	}
 }
 
