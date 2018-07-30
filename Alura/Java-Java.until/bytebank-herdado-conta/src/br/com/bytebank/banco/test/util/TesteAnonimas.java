@@ -59,7 +59,7 @@ public class TesteAnonimas {
 		};
 		
 		for (Conta conta : lista) {
-			System.out.println(conta + ", " + conta.getTitular().getNome());
+			System.out.println(conta + ", " + conta.getTitular().getNome());	
 		}
 	}
 
