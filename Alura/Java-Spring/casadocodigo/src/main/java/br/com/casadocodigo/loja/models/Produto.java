@@ -1,9 +1,12 @@
 package br.com.casadocodigo.loja.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity
 public class Produto {
@@ -14,6 +17,8 @@ public class Produto {
 	private String titulo;
 	private String descricao;
 	private int paginas;
+	
+	private List<Preco> precos;
 	
 	
 	public String getTitulo() {
