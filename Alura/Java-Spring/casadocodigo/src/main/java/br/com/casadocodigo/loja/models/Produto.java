@@ -21,6 +21,18 @@ public class Produto {
 	private List<Preco> precos;
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public List<Preco> getPrecos() {
+		return precos;
+	}
+	public void setPrecos(List<Preco> precos) {
+		this.precos = precos;
+	}
 	public String getTitulo() {
 		return titulo;
 	}
