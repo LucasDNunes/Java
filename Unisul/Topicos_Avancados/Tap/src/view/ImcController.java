@@ -19,12 +19,14 @@ public class ImcController {
 		double peso = Double.parseDouble(txtPeso.getText());
 		double altura = Double.parseDouble(txtAltura.getText());
 		double imc = peso/(altura*altura);
-		//txtResultado.setText(imc+"");
-		txtResultado.setText("sadsad");
+		//txtResultado.setText(Math.round(imc) + "");
+		//txtResultado.setText(String.format("%.2f", imc));
 		
-//		if (rdMasc.isSelected()) {
-//			
-//		}
+		if (rdMasc.isSelected()) {
+			txtResultado.setText("Senhor: "+ String.format("%.2f", imc));
+		}else if(rdFem.isSelected()) {
+			txtResultado.setText("Senhora: "+ String.format("%.2f", imc));
+		}
 	}
 	
 	@FXML
