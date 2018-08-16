@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ImcController {
 	
@@ -20,13 +21,19 @@ public class ImcController {
 		double altura = Double.parseDouble(txtAltura.getText());
 		double imc = peso/(altura*altura);
 		//txtResultado.setText(Math.round(imc) + "");
-		//txtResultado.setText(String.format("%.2f", imc));
 		
 		if (rdMasc.isSelected()) {
-			txtResultado.setText("Senhor: "+ String.format("%.2f", imc));
+			txtResultado.setText("Senhor: "+ txtNome.getText()+"= "+ String.format("%.2f", imc));
 		}else if(rdFem.isSelected()) {
-			txtResultado.setText("Senhora: "+ String.format("%.2f", imc));
+			txtResultado.setText("Senhora: "+ txtNome.getText() +"= " +String.format("%.2f", imc));
+		}else {
+			txtResultado.setText("Preencha todos os campos!");
 		}
+	}
+	@FXML
+	public void trocaTela() {
+		TelaCadastro tl = new TelaCadastro();
+		//tl.start(Stage primaryStage);
 	}
 	
 	@FXML
@@ -36,5 +43,6 @@ public class ImcController {
 		txtPeso.setText("");
 		rdFem.setSelected(false);
 		rdMasc.setSelected(false);
+		txtResultado.setText("");
 	}
 }
