@@ -171,12 +171,12 @@
             </VBox>
          </center>
          <bottom>
-            <TableView BorderPane.alignment="CENTER">
+            <TableView fx:id="tbl" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="161.0" text="Nome" />
-                <TableColumn prefWidth="68.0" text="Idade" />
-                  <TableColumn prefWidth="70.0" text="Sexo" />
-                  <TableColumn prefWidth="120.0" text="Turno" />
+                <TableColumn fx:id="colNome" prefWidth="161.0" text="Nome" />
+                <TableColumn fx:id="colIdade" prefWidth="68.0" text="Idade" />
+                  <TableColumn fx:id="colSexo" prefWidth="70.0" text="Sexo" />
+                  <TableColumn fx:id="colTurno" prefWidth="120.0" text="Turno" />
               </columns>
             </TableView>
          </bottom>
