@@ -19,8 +19,8 @@ public class Main extends Application {
 	        });
 	        
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Imc.fxml"));
-			//AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ExemploCadastro.fxml"));
+			//AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Imc.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ExemploCadastro.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);

@@ -14,14 +14,14 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 
-public class Pessoa {
-	
+public class Aluno {
+
 	private StringProperty nome = new SimpleStringProperty("");
 	private StringProperty sexo = new SimpleStringProperty("");
 	private StringProperty dataNasc = new SimpleStringProperty("");
 	private StringProperty UF = new SimpleStringProperty("");
 	private BooleanProperty mat = new SimpleBooleanProperty(false);
-	private BooleanProperty vep = new SimpleBooleanProperty(false);
+	private BooleanProperty ves = new SimpleBooleanProperty(false);
 	private BooleanProperty not = new SimpleBooleanProperty(false);
 	private IntegerProperty idade = new SimpleIntegerProperty(0);
 	
@@ -137,20 +137,20 @@ public class Pessoa {
 	
 
 
-	public BooleanProperty vepProperty() {
-		return this.vep;
+	public BooleanProperty vesProperty() {
+		return this.ves;
 	}
 	
 
 
 	public boolean isVep() {
-		return this.vepProperty().get();
+		return this.vesProperty().get();
 	}
 	
 
 
-	public void setVep(final boolean vep) {
-		this.vepProperty().set(vep);
+	public void setVes(final boolean vep) {
+		this.vesProperty().set(vep);
 	}
 	
 

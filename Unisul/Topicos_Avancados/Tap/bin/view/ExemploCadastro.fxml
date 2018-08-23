@@ -10,6 +10,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -71,8 +72,11 @@
                            <HBox.margin>
                               <Insets left="10.0" top="2.0" />
                            </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="GrupoSexo" />
+                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rdFem" mnemonicParsing="false" text="Feminino">
+                        <RadioButton fx:id="rdFem" mnemonicParsing="false" text="Feminino" toggleGroup="$GrupoSexo">
                            <HBox.margin>
                               <Insets left="10.0" top="2.0" />
                            </HBox.margin>
@@ -139,7 +143,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Cadastrar">
+                        <Button mnemonicParsing="false" onAction="#incluir" text="Cadastrar">
                            <HBox.margin>
                               <Insets left="10.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -160,7 +164,7 @@
                   </HBox>
                   <HBox>
                      <children>
-                        <TextField fx:id="txtFiltro" prefHeight="25.0" prefWidth="329.0" promptText="Nome Aluno Para Filtro">
+                        <TextField fx:id="txtFiltro" onKeyReleased="#filtrar" prefHeight="25.0" prefWidth="329.0" promptText="Nome Aluno Para Filtro">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" />
                            </HBox.margin>
@@ -171,12 +175,14 @@
             </VBox>
          </center>
          <bottom>
-            <TableView fx:id="tbl" BorderPane.alignment="CENTER">
+            <TableView fx:id="tbl" onMouseClicked="#selecionaAluno" prefHeight="290.0" prefWidth="517.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="colNome" prefWidth="161.0" text="Nome" />
-                <TableColumn fx:id="colIdade" prefWidth="68.0" text="Idade" />
-                  <TableColumn fx:id="colSexo" prefWidth="70.0" text="Sexo" />
-                  <TableColumn fx:id="colTurno" prefWidth="120.0" text="Turno" />
+                <TableColumn fx:id="colIdade" prefWidth="60.0" text="Idade" />
+                  <TableColumn fx:id="colSexo" prefWidth="78.0" text="Sexo" />
+                  <TableColumn fx:id="colMatutino" prefWidth="61.0" text="Matutino" />
+                  <TableColumn fx:id="colVespertino" prefWidth="74.0" text="Vespertino" />
+                  <TableColumn fx:id="colNoturno" prefWidth="62.0" text="Noturno" />
               </columns>
             </TableView>
          </bottom>
