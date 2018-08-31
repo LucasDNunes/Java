@@ -97,6 +97,7 @@ public class ExemploCadastroController {
 		uf.getItems().add("PR");
 		uf.getItems().add("RJ");
 		uf.getItems().add("SP");
+		uf.getItems().add("BA");
 
 		uf.getSelectionModel().select(0);
 	}
