@@ -12,17 +12,32 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import view.ExemploCadastroController;
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Aluno {
-
+	
+	@Builder.Default
 	private StringProperty nome = new SimpleStringProperty("");
+	@Builder.Default
 	private StringProperty sexo = new SimpleStringProperty("");
+	@Builder.Default
 	private StringProperty dataNasc = new SimpleStringProperty("");
+	@Builder.Default
 	private StringProperty UF = new SimpleStringProperty("");
+	@Builder.Default
 	private BooleanProperty mat = new SimpleBooleanProperty(false);
+	@Builder.Default
 	private BooleanProperty ves = new SimpleBooleanProperty(false);
+	@Builder.Default
 	private BooleanProperty not = new SimpleBooleanProperty(false);
+	@Builder.Default
 	private IntegerProperty idade = new SimpleIntegerProperty(0);
 	
 	
@@ -39,25 +54,14 @@ public class Aluno {
 	@FXML CheckBox checkMatutino;
 	@FXML CheckBox checkVespertino;
 	@FXML CheckBox checkNoturno;
-
 	
-	public void Cadastrar() {
-		
-		
-	}
-
-
 	public StringProperty nomeProperty() {
 		return this.nome;
 	}
-	
-
 
 	public String getNome() {
 		return this.nomeProperty().get();
 	}
-	
-
 
 	public void setNome(final String nome) {
 		this.nomeProperty().set(nome);

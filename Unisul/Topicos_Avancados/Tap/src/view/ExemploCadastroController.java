@@ -15,8 +15,14 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import model.Aluno;
-
+@Getter
+@Setter
 public class ExemploCadastroController {
 
 	@FXML
@@ -82,7 +88,6 @@ public class ExemploCadastroController {
 		alunos.add(aluno);
 
 		tbl.setItems(FXCollections.observableArrayList(alunos));
-
 	}
 
 	@FXML
@@ -118,8 +123,8 @@ public class ExemploCadastroController {
 	}
 
 	private int calculaIdade(LocalDate dataNasc) {
-		LocalDate DataHoje = LocalDate.now();
-		long idade = ChronoUnit.YEARS.between(dataNasc, DataHoje);
+		LocalDate dataHoje = LocalDate.now();
+		long idade = ChronoUnit.YEARS.between(dataNasc, dataHoje);
 		return (int) idade;
 	}
 
@@ -128,7 +133,7 @@ public class ExemploCadastroController {
 		if (txtFiltro.getText().equals("")) {
 			tbl.setItems(FXCollections.observableArrayList(alunos));
 		} else {
-			ArrayList<Aluno> aux = new ArrayList<Aluno>();
+			ArrayList<Aluno> aux = new ArrayList<>();
 			for (Aluno aluno : alunos) {
 				if (aluno.getNome().startsWith(txtFiltro.getText().toLowerCase())) {
 					aux.add(aluno);
