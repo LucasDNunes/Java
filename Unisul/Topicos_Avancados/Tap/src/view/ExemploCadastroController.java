@@ -21,33 +21,32 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import model.Aluno;
-@Getter
-@Setter
-public class ExemploCadastroController {
 
+public class ExemploCadastroController {
+	
 	@FXML
 	TextField txtNome;
 	@FXML
 	TextField txtFiltro;
-
+	
 	@FXML
 	RadioButton rdMasc;
 	@FXML
 	RadioButton rdFem;
-
+	
 	@FXML
 	ComboBox<String> uf;
-
+	
 	@FXML
 	DatePicker txtDataNascimento;
-
+	
 	@FXML
 	CheckBox checkMatutino;
 	@FXML
 	CheckBox checkVespertino;
 	@FXML
 	CheckBox checkNoturno;
-
+	
 	@FXML
 	TableView<Aluno> tbl;
 	@FXML
@@ -62,40 +61,40 @@ public class ExemploCadastroController {
 	TableColumn<Aluno, String> colVespertino;
 	@FXML
 	TableColumn<Aluno, String> colNoturno;
-
-	private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
-
+	
+	private ArrayList<Aluno> alunos = new ArrayList<>();
+	
 	@FXML
 	public void incluir() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+		
 		Aluno aluno = new Aluno();
-
+		
 		aluno.setNome(txtNome.getText());
-
+		
 		aluno.setSexo(rdMasc.isSelected() ? "M" : "F");
-
+		
 		aluno.setDataNasc(dtf.format(txtDataNascimento.getValue()));
-
+		
 		aluno.setMat(checkMatutino.isSelected());
 		aluno.setVes(checkVespertino.isSelected());
 		aluno.setNot(checkNoturno.isSelected());
-
+		
 		aluno.setUF(uf.getSelectionModel().getSelectedItem());
-
+		
 		aluno.setIdade(calculaIdade(txtDataNascimento.getValue()));
-
+		
 		alunos.add(aluno);
-
+		
 		tbl.setItems(FXCollections.observableArrayList(alunos));
 	}
-
+	
 	@FXML
 	public void initialize() {
 		inicializaComboUf();
 		inicializaTbl();
 	}
-
+	
 	private void inicializaComboUf() {
 		uf.getItems().add("SC");
 		uf.getItems().add("AC");
@@ -103,31 +102,28 @@ public class ExemploCadastroController {
 		uf.getItems().add("RJ");
 		uf.getItems().add("SP");
 		uf.getItems().add("BA");
-
+		
 		uf.getSelectionModel().select(0);
 	}
-
+	
 	private void inicializaTbl() {
 		colNome.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
 		colIdade.setCellValueFactory(cellData -> cellData.getValue().idadeProperty());
 		colSexo.setCellValueFactory(cellData -> cellData.getValue().sexoProperty());
-		colMatutino
-				.setCellValueFactory(cellData -> cellData.getValue().matProperty().get() ? new SimpleStringProperty("X")
-						: new SimpleStringProperty(""));
-		colVespertino
-				.setCellValueFactory(cellData -> cellData.getValue().vesProperty().get() ? new SimpleStringProperty("X")
-						: new SimpleStringProperty(""));
-		colNoturno
-				.setCellValueFactory(cellData -> cellData.getValue().notProperty().get() ? new SimpleStringProperty("X")
-						: new SimpleStringProperty(""));
+		colMatutino.setCellValueFactory(cellData -> cellData.getValue().matProperty().get()
+				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
+		colVespertino.setCellValueFactory(cellData -> cellData.getValue().vesProperty().get()
+				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
+		colNoturno.setCellValueFactory(cellData -> cellData.getValue().notProperty().get()
+				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
 	}
-
+	
 	private int calculaIdade(LocalDate dataNasc) {
 		LocalDate dataHoje = LocalDate.now();
 		long idade = ChronoUnit.YEARS.between(dataNasc, dataHoje);
 		return (int) idade;
 	}
-
+	
 	@FXML
 	private void filtrar() {
 		if (txtFiltro.getText().equals("")) {
@@ -142,11 +138,11 @@ public class ExemploCadastroController {
 			tbl.setItems(FXCollections.observableArrayList(aux));
 		}
 	}
-
+	
 	@FXML
 	private void selecionaAluno() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+		
 		Aluno aluno = tbl.getSelectionModel().getSelectedItem();
 		txtNome.setText(aluno.getNome());
 		if (aluno.getSexo().equals("F")) {
@@ -156,12 +152,12 @@ public class ExemploCadastroController {
 			rdMasc.setSelected(true);
 			rdFem.setSelected(false);
 		}
-
+		
 		uf.getSelectionModel().select(aluno.getUF());
 		txtDataNascimento.setValue(LocalDate.parse(aluno.getDataNasc(), dtf));
 		checkMatutino.setSelected(aluno.isMat());
 		checkVespertino.setSelected(aluno.isVep());
 		checkNoturno.setSelected(aluno.isNot());
 	}
-
+	
 }

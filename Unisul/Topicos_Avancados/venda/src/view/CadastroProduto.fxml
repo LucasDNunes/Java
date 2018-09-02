@@ -87,14 +87,14 @@
                   </HBox>
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="Adicionar">
+                        <Button mnemonicParsing="false" onAction="#adicionar" text="Adicionar">
                            <HBox.margin>
                               <Insets left="20.0" top="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <TableView prefHeight="200.0" prefWidth="477.0">
+                  <TableView fx:id="table" prefHeight="200.0" prefWidth="477.0">
                     <columns>
                       <TableColumn prefWidth="127.0" text="Produto" />
                       <TableColumn prefWidth="78.0" text="Valor" />
