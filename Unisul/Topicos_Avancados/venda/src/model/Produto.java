@@ -9,7 +9,6 @@ import javafx.beans.property.StringProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +20,8 @@ public class Produto {
 	private DoubleProperty valor = new SimpleDoubleProperty(0.0);
 	@Builder.Default
 	private IntegerProperty quantidade = new SimpleIntegerProperty(0);
+	@Builder.Default
+	private DoubleProperty subTotal = new SimpleDoubleProperty(0); 
 	
 	public final StringProperty nomeProperty() {
 		return this.nome;
@@ -61,6 +62,22 @@ public class Produto {
 	public final void setValor(final double valor) {
 		this.valorProperty().set(valor);
 	}
+
+	public final DoubleProperty subTotalProperty() {
+		return this.subTotal;
+	}
+	
+
+	public final double getSubTotal() {
+		return this.subTotalProperty().get();
+	}
+	
+
+	public final void setSubTotal(final double subTotal) {
+		this.subTotalProperty().set(subTotal);
+	}
+	
+
 	
 	
 	

@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="528.0" prefWidth="497.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="view.CadastroProdutoController">
+<AnchorPane prefHeight="528.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadastroProdutoController">
    <children>
       <BorderPane prefHeight="244.0" prefWidth="306.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <top>
@@ -50,7 +49,7 @@
                               <Insets left="5.0" top="8.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="txtProduto">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
@@ -64,7 +63,7 @@
                               <Insets left="5.0" top="8.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="txtValor">
                            <HBox.margin>
                               <Insets left="25.0" top="5.0" />
                            </HBox.margin>
@@ -78,7 +77,7 @@
                               <Insets left="5.0" top="8.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="txtQuantidade">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
@@ -94,12 +93,12 @@
                         </Button>
                      </children>
                   </HBox>
-                  <TableView fx:id="table" prefHeight="200.0" prefWidth="477.0">
+                  <TableView fx:id="table" onMouseClicked="#selecionaProduto" prefHeight="200.0" prefWidth="477.0">
                     <columns>
-                      <TableColumn prefWidth="127.0" text="Produto" />
-                      <TableColumn prefWidth="78.0" text="Valor" />
-                        <TableColumn prefWidth="98.0" text="Quantidade" />
-                        <TableColumn prefWidth="105.0" text="Sub Total" />
+                      <TableColumn fx:id="colNome" prefWidth="127.0" text="Produto" />
+                      <TableColumn fx:id="colValor" prefWidth="78.0" text="Valor" />
+                        <TableColumn fx:id="colQuantidade" prefWidth="98.0" text="Quantidade" />
+                        <TableColumn fx:id="colSubTotal" prefWidth="105.0" text="Sub Total" />
                     </columns>
                      <VBox.margin>
                         <Insets top="20.0" />
@@ -119,7 +118,7 @@
                         <Insets left="30.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField editable="false" prefHeight="33.0" prefWidth="167.0">
+                  <TextField fx:id="txtTotal" editable="false" prefHeight="33.0" prefWidth="167.0">
                      <HBox.margin>
                         <Insets left="10.0" top="13.0" />
                      </HBox.margin>

@@ -64,10 +64,28 @@ public class ExemploCadastroController {
 	
 	private ArrayList<Aluno> alunos = new ArrayList<>();
 	
+	
+	@FXML
+	public void initialize() {
+		inicializaComboUf();
+		inicializaTbl();
+	}
+	
+	private void inicializaTbl() {
+		colNome.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+		colIdade.setCellValueFactory(cellData -> cellData.getValue().idadeProperty());
+		colSexo.setCellValueFactory(cellData -> cellData.getValue().sexoProperty());
+		colMatutino.setCellValueFactory(cellData -> cellData.getValue().matProperty().get()
+				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
+		colVespertino.setCellValueFactory(cellData -> cellData.getValue().vesProperty().get()
+				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
+		colNoturno.setCellValueFactory(cellData -> cellData.getValue().notProperty().get()
+				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
+	}
+	
 	@FXML
 	public void incluir() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		
 		Aluno aluno = new Aluno();
 		
 		aluno.setNome(txtNome.getText());
@@ -89,11 +107,6 @@ public class ExemploCadastroController {
 		tbl.setItems(FXCollections.observableArrayList(alunos));
 	}
 	
-	@FXML
-	public void initialize() {
-		inicializaComboUf();
-		inicializaTbl();
-	}
 	
 	private void inicializaComboUf() {
 		uf.getItems().add("SC");
@@ -106,17 +119,7 @@ public class ExemploCadastroController {
 		uf.getSelectionModel().select(0);
 	}
 	
-	private void inicializaTbl() {
-		colNome.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-		colIdade.setCellValueFactory(cellData -> cellData.getValue().idadeProperty());
-		colSexo.setCellValueFactory(cellData -> cellData.getValue().sexoProperty());
-		colMatutino.setCellValueFactory(cellData -> cellData.getValue().matProperty().get()
-				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
-		colVespertino.setCellValueFactory(cellData -> cellData.getValue().vesProperty().get()
-				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
-		colNoturno.setCellValueFactory(cellData -> cellData.getValue().notProperty().get()
-				? new SimpleStringProperty("X") : new SimpleStringProperty(""));
-	}
+	
 	
 	private int calculaIdade(LocalDate dataNasc) {
 		LocalDate dataHoje = LocalDate.now();
