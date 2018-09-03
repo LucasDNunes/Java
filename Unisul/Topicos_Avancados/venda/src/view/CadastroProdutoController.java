@@ -1,10 +1,14 @@
 package view;
 
+import java.awt.List;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import lombok.experimental.Tolerate;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import model.Produto;
@@ -49,8 +53,9 @@ public class CadastroProdutoController {
 		produtos.add(produto);
 		
 		table.setItems(FXCollections.observableArrayList(produtos));
-		String teste = table.getColumns().get(3).getText();
-		txtValor.setText(table.getColumns().get(3).toString());
+
+		txtTotal.setText(String.format("%.2f $", calculaTotal()));
+		limpaTela();
 	}
 	
 	private void inicializaTbl() {
@@ -67,8 +72,22 @@ public class CadastroProdutoController {
 		txtValor.setText(String.format("%g", produto.getValor()));
 		txtQuantidade.setText(String.format("%d", produto.getQuantidade()));
 	}
+	@FXML
+	private void limpaTela() {
+		txtProduto.setText("");
+		txtValor.setText("");
+		txtQuantidade.setText("");
+	}
 	
 	private double calculaSubTotal(double valor, int quantidade) {
 		return  valor * quantidade;
+	}
+	
+	private double calculaTotal() {
+		double total = 0;
+		for (Produto produto : produtos) {
+			total += produto.getSubTotal();
+		}
+		return total;
 	}
 }

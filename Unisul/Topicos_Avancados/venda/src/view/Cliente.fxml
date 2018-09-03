@@ -15,8 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefWidth="336.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane prefWidth="336.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClienteController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <top>
@@ -48,7 +47,7 @@
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <RadioButton mnemonicParsing="false" text="Cartão">
+                        <RadioButton fx:id="ckCartao" mnemonicParsing="false" text="Cartão">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -56,7 +55,15 @@
                               <ToggleGroup fx:id="GrupoPagamento" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Depósito" toggleGroup="$GrupoPagamento">
+                        <RadioButton fx:id="ckBoleto" mnemonicParsing="false" text="Boleto" toggleGroup="$GrupoPagamento">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="ckDeposito" mnemonicParsing="false" text="Depósito">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="GrupoPagamento1" />
+                           </toggleGroup>
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -73,7 +80,7 @@
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="txtCliente">
                            <HBox.margin>
                               <Insets left="10.0" top="3.0" />
                            </HBox.margin>
@@ -90,7 +97,7 @@
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox prefWidth="150.0">
+                        <ComboBox fx:id="txtCidades" prefWidth="150.0">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -106,7 +113,7 @@
          <bottom>
             <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="Registrar">
+                  <Button mnemonicParsing="false" onAction="#registrar" text="Registrar">
                      <HBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </HBox.margin>
