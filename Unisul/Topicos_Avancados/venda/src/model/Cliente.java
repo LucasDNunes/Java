@@ -4,10 +4,6 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 public class Cliente {
 	private StringProperty nome = new SimpleStringProperty("");
 	private StringProperty cidade = new SimpleStringProperty("");

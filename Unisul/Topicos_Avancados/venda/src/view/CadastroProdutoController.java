@@ -1,14 +1,10 @@
 package view;
 
-import java.awt.List;
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
-import lombok.experimental.Tolerate;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import model.Produto;
@@ -40,13 +36,14 @@ public class CadastroProdutoController {
 	@FXML
 	public void initialize() {
 		inicializaTbl();
+		table.setEditable(true);
 	}
 	
 	@FXML
 	public void adicionar() {
 		Produto produto = new Produto();
 		produto.setNome(txtProduto.getText());
-		produto.setValor(Double.parseDouble(txtValor.getText()));
+		produto.setValor(Double.parseDouble(txtValor.getText().replace(",", ".")));
 		produto.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
 		produto.setSubTotal(calculaSubTotal(produto.getValor(), produto.getQuantidade()));
 		
@@ -69,7 +66,7 @@ public class CadastroProdutoController {
 	private void selecionaProduto() {
 		Produto produto = table.getSelectionModel().getSelectedItem();
 		txtProduto.setText(produto.getNome());
-		txtValor.setText(String.format("%g", produto.getValor()));
+		txtValor.setText(String.format("%.2f", produto.getValor()));
 		txtQuantidade.setText(String.format("%d", produto.getQuantidade()));
 	}
 	@FXML
@@ -90,4 +87,13 @@ public class CadastroProdutoController {
 		}
 		return total;
 	}
+
+	@FXML public void edita(TableColumn.CellEditEvent<Produto, String> productStringCellEvent) {
+		Produto produto = table.getSelectionModel().getSelectedItem();
+		produto.setNome(productStringCellEvent.getNewValue());
+	}
+
+	
+	
+
 }
