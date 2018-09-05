@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="528.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadastroProdutoController">
+   <children>
+      <BorderPane prefHeight="244.0" prefWidth="306.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="108.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/cash-register.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Produto">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Produto:">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtProduto">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Valor:">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtValor">
+                           <HBox.margin>
+                              <Insets left="25.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Quantidade:">
+                           <HBox.margin>
+                              <Insets left="5.0" top="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtQuantidade">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#adicionar" text="Adicionar">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="table" onMouseClicked="#selecionaProduto" prefHeight="200.0" prefWidth="477.0">
+                    <columns>
+                      <TableColumn fx:id="colNome" onEditCommit="#edita" prefWidth="127.0" text="Produto" />
+                      <TableColumn fx:id="colValor" prefWidth="78.0" text="Valor" />
+                        <TableColumn fx:id="colQuantidade" prefWidth="98.0" text="Quantidade" />
+                        <TableColumn fx:id="colSubTotal" prefWidth="105.0" text="Sub Total" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Total:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtTotal" editable="false" prefHeight="33.0" prefWidth="167.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="13.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

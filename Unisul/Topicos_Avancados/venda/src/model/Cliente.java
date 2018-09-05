@@ -4,13 +4,24 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
+	@Builder.Default
 	private StringProperty nome = new SimpleStringProperty("");
+	@Builder.Default
 	private StringProperty cidade = new SimpleStringProperty("");
+	@Builder.Default
 	private BooleanProperty cartao = new SimpleBooleanProperty(false);
+	@Builder.Default
 	private BooleanProperty boleto = new SimpleBooleanProperty(false);
+	@Builder.Default
 	private BooleanProperty deposito = new SimpleBooleanProperty(false);
-	
 	
 	public final StringProperty nomeProperty() {
 		return this.nome;

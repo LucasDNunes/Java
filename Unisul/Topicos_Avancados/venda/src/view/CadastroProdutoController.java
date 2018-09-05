@@ -46,8 +46,9 @@ public class CadastroProdutoController {
 		produto.setValor(Double.parseDouble(txtValor.getText().replace(",", ".")));
 		produto.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
 		produto.setSubTotal(calculaSubTotal(produto.getValor(), produto.getQuantidade()));
-		
+				
 		produtos.add(produto);
+		
 		
 		table.setItems(FXCollections.observableArrayList(produtos));
 

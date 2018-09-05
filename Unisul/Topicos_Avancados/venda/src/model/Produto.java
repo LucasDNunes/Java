@@ -21,7 +21,7 @@ public class Produto {
 	@Builder.Default
 	private IntegerProperty quantidade = new SimpleIntegerProperty(0);
 	@Builder.Default
-	private DoubleProperty subTotal = new SimpleDoubleProperty(0); 
+	private DoubleProperty subTotal = new SimpleDoubleProperty(0);
 	
 	public final StringProperty nomeProperty() {
 		return this.nome;
