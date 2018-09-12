@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -47,7 +49,7 @@ public class CorredoresController {
 		try {
 			inserirTabela();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			mostraMensagem(String.format("valor invalido %s", e.getMessage()), AlertType.WARNING);
 		}
 	}
 	
@@ -86,11 +88,19 @@ public class CorredoresController {
 		txtNumeroPeito.setText(String.format("%s", corredor.getNumeroPeito()));
 		txtDistancia.setText(String.format("%s", corredor.getDistancia()));
 	}
+	
 	@FXML
 	private void limpaTela() {
 		txtNome.setText("");
 		txtNumeroPeito.setText("");
 		txtDistancia.setText("");
 		dataNascimento.setValue(null);
+	}
+	
+	private void mostraMensagem(String msg, AlertType tipoMensagem) {
+		Alert alerta = new Alert(tipoMensagem);
+		alerta.setHeaderText(null);
+		alerta.setContentText(msg);
+		alerta.show();
 	}
 }
