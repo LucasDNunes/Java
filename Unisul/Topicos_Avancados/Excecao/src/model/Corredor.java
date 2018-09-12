@@ -1,16 +1,19 @@
 package model;
 
+import java.time.LocalDate;
+
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Corredores {
+public class Corredor {
 	
 	private StringProperty nome = new SimpleStringProperty();
 	private IntegerProperty numeroPeito = new SimpleIntegerProperty();
 	private IntegerProperty idade = new SimpleIntegerProperty();
 	private IntegerProperty distancia = new SimpleIntegerProperty();
+	private LocalDate dataNascimento;
 	
 	
 	public final StringProperty nomeProperty() {
@@ -60,6 +63,14 @@ public class Corredores {
 	public final void setDistancia(final int distancia) {
 		this.distanciaProperty().set(distancia);
 	}
-	
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 	
 }

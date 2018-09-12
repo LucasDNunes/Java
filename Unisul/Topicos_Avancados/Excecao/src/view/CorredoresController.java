@@ -12,7 +12,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import model.Corredores;
+import model.Corredor;
 
 public class CorredoresController {
 	
@@ -27,17 +27,17 @@ public class CorredoresController {
 	DatePicker dataNascimento;
 	
 	@FXML
-	TableView<Corredores> tableView;
+	TableView<Corredor> tableView;
 	@FXML
-	TableColumn<Corredores, String> colNome;
+	TableColumn<Corredor, String> colNome;
 	@FXML
-	TableColumn<Corredores, Number> colNumeroPeito;
+	TableColumn<Corredor, Number> colNumeroPeito;
 	@FXML
-	TableColumn<Corredores, Number> colIdade;
+	TableColumn<Corredor, Number> colIdade;
 	@FXML
-	TableColumn<Corredores, Number> colDistancia;
+	TableColumn<Corredor, Number> colDistancia;
 	
-	private ArrayList<Corredores> corredores = new ArrayList<>();
+	private ArrayList<Corredor> corredores = new ArrayList<>();
 	
 	@FXML
 	public void initialize() {
@@ -54,12 +54,13 @@ public class CorredoresController {
 	}
 	
 	private void inserirTabela() {
-		Corredores corredor = new Corredores();
+		Corredor corredor = new Corredor();
 		corredor.setNome(txtNome.getText());
 		corredor.setNumeroPeito(Integer.parseInt(txtNumeroPeito.getText()));
 		corredor.setIdade(calculaIdade(dataNascimento.getValue()));
 		corredor.setDistancia(Integer.parseInt(txtDistancia.getText()));
-				
+		corredor.setDataNascimento(dataNascimento.getValue());
+		
 		this.corredores.add(corredor);
 		
 		
@@ -83,10 +84,11 @@ public class CorredoresController {
 	
 	@FXML
 	private void selecionaProduto() {
-		Corredores corredor = tableView.getSelectionModel().getSelectedItem();
+		Corredor corredor = tableView.getSelectionModel().getSelectedItem();
 		txtNome.setText(corredor.getNome());
 		txtNumeroPeito.setText(String.format("%s", corredor.getNumeroPeito()));
 		txtDistancia.setText(String.format("%s", corredor.getDistancia()));
+		dataNascimento.setValue(corredor.getDataNascimento());
 	}
 	
 	@FXML
