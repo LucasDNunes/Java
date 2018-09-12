@@ -1,103 +1,50 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 
 public class PrincipalController {
-	@FXML TextField txtTamanho;
-	@FXML TextField txtNumeroIncluir;
-	@FXML TextField txtPosicao;
-	
-	private int[] vetorNumero;
+	@FXML
+	TabPane tabPane;
 	
 	@FXML
-	public boolean criarVetorSemTry() {
-		if (!txtTamanho.getText().isEmpty()) {
-			int tamanho = Integer.parseInt(txtTamanho.getText());
-			vetorNumero = new int[tamanho];			
-			return true;
-		}
-		return false;
+	public void abreTelaExemplo() {
+		abreTab("Exemplo Excecaor", "ExemploExecao.fxml");
 	}
 	
 	@FXML
-	public void criarVetor() throws NegativeArraySizeException, NumberFormatException {
+	public void abreTelaAtividade() {
+		abreTab("Corredores", "Corredores.fxml");
+	}
+	
+	private void abreTab(String titulo, String path) {
 		try {
-			int tamanho = Integer.parseInt(txtTamanho.getText());
-			if (tamanho > 10) {
-				throw new NumberFormatException("limite 10");
+			Tab tab = tabAberta(titulo);
+			if (tab == null) {
+				tab = new Tab(titulo);
+				tab.setClosable(true);
+				tabPane.getTabs().add(tab);
+				tab.setContent((Node) FXMLLoader.load(getClass().getResource(path)));
 			}
-			vetorNumero = new int[tamanho];
-		} catch (NumberFormatException e) {
-			mostraMensagem("erro de conversao \n"+ e.toString(), AlertType.ERROR);
-			txtTamanho.requestFocus();
-			txtTamanho.selectAll();
-		} catch (NegativeArraySizeException e) {
-			mostraMensagem("Não pode ser negativo \n"+ e.toString() , AlertType.ERROR);
-			txtTamanho.requestFocus();
-			txtTamanho.selectAll();
+			selecionaTab(tab);
 		} catch (Exception e) {
-			mostraMensagem("ERROR \n"+ e.toString() , AlertType.ERROR);
-			txtTamanho.requestFocus();
-			txtTamanho.selectAll();
-		} 
-	}
-	
-	@FXML
-	public void inserirSemTry() {
-		if (criarVetorSemTry() && retornaInteiro(txtPosicao.getText()) > 0) {
-			int numero = Integer.parseInt(txtNumeroIncluir.getText());
-			int posicao = Integer.parseInt(txtPosicao.getText());
-			insereNoVetor(posicao, numero);
-			mostraMensagem("número incluido com sucesso", AlertType.INFORMATION);			
-		} else {
-			mostraMensagem("preencha o campo de tamanho", AlertType.ERROR);
+			e.printStackTrace();
 		}
 	}
 	
-	@FXML
-	public void inserir() {
-		try {
-			
-			int numero = Integer.parseInt(txtNumeroIncluir.getText());
-			int posicao = Integer.parseInt(txtPosicao.getText());
-			insereNoVetor(posicao, numero);
-			mostraMensagem("número incluido com sucesso", AlertType.INFORMATION);			
-		}catch (NumberFormatException e) {
-			mostraMensagem("errro na conversao número", AlertType.INFORMATION);
-		}catch (NegativeArraySizeException e) {
-			mostraMensagem("numero negativo no campo posição", AlertType.INFORMATION);
-		}catch (ArrayIndexOutOfBoundsException e) {
-			mostraMensagem("tamanho invalido", AlertType.INFORMATION);
-		}catch (NullPointerException e) {
-			mostraMensagem("vetor nao instanciado", AlertType.INFORMATION);
-		} catch (Exception e) {
-			mostraMensagem("erro desconhecido", AlertType.INFORMATION);
-		} finally {
-			mostraMensagem("novas", AlertType.WARNING);
-			
-		}
+	private void selecionaTab(Tab tab) {
+		tabPane.getSelectionModel().select(tab);
 	}
 	
-	private void insereNoVetor(int posicao, int numero) throws ArrayIndexOutOfBoundsException{
-		try {
-			vetorNumero[posicao -1 ] = numero;
-		} catch (ArrayIndexOutOfBoundsException e) {
-			mostraMensagem("posição nao existente", AlertType.INFORMATION);
-			throw e;
+	private Tab tabAberta(String titulo) {
+		for (Tab tab : tabPane.getTabs()) {
+			if (!(tab.getText() == null) && tab.getText().equals(titulo)) {
+				return tab;
+			}
 		}
-	}
-	
-	private int retornaInteiro(String text) {
-		return Integer.parseInt(text);
-	}
-
-	private void mostraMensagem(String msg, AlertType tipoMensagem) {
-		Alert alerta = new Alert(tipoMensagem);
-		alerta.setHeaderText(null);
-		alerta.setContentText(msg);
-		alerta.show();
+		return null;
 	}
 }
