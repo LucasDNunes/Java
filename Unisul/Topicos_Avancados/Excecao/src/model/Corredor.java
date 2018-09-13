@@ -14,7 +14,7 @@ public class Corredor {
 	private IntegerProperty idade = new SimpleIntegerProperty();
 	private IntegerProperty distancia = new SimpleIntegerProperty();
 	private LocalDate dataNascimento;
-	
+	private SimpleStringProperty faixaEtaria = new SimpleStringProperty();
 	
 	public final StringProperty nomeProperty() {
 		return this.nome;
@@ -71,6 +71,21 @@ public class Corredor {
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+
+	public final SimpleStringProperty faixaEtariaProperty() {
+		return this.faixaEtaria;
+	}
+	
+
+	public final String getFaixaEtaria() {
+		return this.faixaEtariaProperty().get();
+	}
+	
+
+	public final void setFaixaEtaria(final String faixaEtaria) {
+		this.faixaEtariaProperty().set(faixaEtaria);
+	}
+	
 
 	
 }
