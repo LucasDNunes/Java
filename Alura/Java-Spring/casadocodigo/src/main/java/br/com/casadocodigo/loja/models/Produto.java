@@ -23,6 +23,7 @@ public class Produto {
 	
 	private String sumarioPath;
 
+	// adiciona o preço como parte do produto
 	@ElementCollection
 	private List<Preco> precos;
 	

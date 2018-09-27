@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.casadocodigo.loja.models.Produto;
 
+//dizendo para o spring que essa é a classe de transação
 @Repository
 @Transactional
 public class ProdutoDAO {

@@ -44,6 +44,10 @@ public class ProdutosController {
 		return modelAndView;
 	}
 	
+	// o redirectAttributes manten os atributos de um request para outro
+	// @valid faz a validação do produto
+	// result que chama o metodo initbinder para chamar a class validation e fazer a
+	// validação do produto
 	@RequestMapping(method=RequestMethod.POST)
 	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result, 
 				RedirectAttributes redirectAttributes){
@@ -62,6 +66,8 @@ public class ProdutosController {
 		return new ModelAndView("redirect:produtos");
 	}
 	
+	// /produtos vem do request da classe que define que essa classe toda está no
+	// /produtos
 	@RequestMapping( method=RequestMethod.GET)
 	public ModelAndView listar() {
 		List<Produto> produtos = dao.listar();

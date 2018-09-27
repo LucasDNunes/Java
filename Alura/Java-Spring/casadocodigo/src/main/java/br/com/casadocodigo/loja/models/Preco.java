@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.persistence.Embeddable;
 
+//diz que o preço vai ser colocado no produto
 @Embeddable
 public class Preco {
 
