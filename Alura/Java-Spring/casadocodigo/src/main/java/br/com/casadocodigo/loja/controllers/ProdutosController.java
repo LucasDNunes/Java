@@ -25,15 +25,15 @@ import br.com.casadocodigo.loja.validation.ProdutoValidation;
 @Controller
 @RequestMapping("/produtos")
 public class ProdutosController {
-
-	@Autowired
-	private ProdutoDAO produtoDao;
 	
 	@Autowired
-	private FileSaver filesaver;
-
+	private ProdutoDAO dao;
+	
+	@Autowired
+    private FileSaver fileSaver;
+	
 	@InitBinder
-	public void InitBinder(WebDataBinder binder) {
+	public void initBinder(WebDataBinder binder) {
 		binder.addValidators(new ProdutoValidation());
 	}
 
@@ -41,49 +41,40 @@ public class ProdutosController {
 	public ModelAndView form(Produto produto) {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");
 		modelAndView.addObject("tipos", TipoPreco.values());
-
 		return modelAndView;
 	}
-
-	// o redirectAttributes manten os atributos de um request para outro
-	// @valid faz a validação do produto
-	// result que chama o metodo initbinder para chamar a class validation e fazer a
-	// validação do produto
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView gravar(MultipartFile sumario ,@Valid Produto produto, BindingResult result, RedirectAttributes redirectAttributes) {
+	
+	@RequestMapping(method=RequestMethod.POST)
+	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result, 
+				RedirectAttributes redirectAttributes){
 		
-		if (result.hasErrors()) {
+		if(result.hasErrors()) {
 			return form(produto);
 		}
 		
-		String path = filesaver.write("arquivos-sumario", sumario);
+		String path = fileSaver.write("arquivos-sumario", sumario);
 		produto.setSumarioPath(path);
-		produtoDao.gravar(produto);
-
+		
+		dao.gravar(produto);
+		
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
-
+		
 		return new ModelAndView("redirect:produtos");
 	}
-
-	// /produtos vem do request da classe que define que essa classe toda está no
-	// /produtos
-	@RequestMapping(method = RequestMethod.GET)
+	
+	@RequestMapping( method=RequestMethod.GET)
 	public ModelAndView listar() {
-		List<Produto> produtos = produtoDao.listar();
+		List<Produto> produtos = dao.listar();
 		ModelAndView modelAndView = new ModelAndView("produtos/lista");
 		modelAndView.addObject("produtos", produtos);
-
 		return modelAndView;
 	}
 	
 	@RequestMapping("/detalhe/{id}")
-	public ModelAndView detalhe(@PathVariable("id") Integer id) {
-		ModelAndView modelAndView = new ModelAndView("produtos/detalhe");
-		
-		 Produto produto = produtoDao.find(id);
-		 modelAndView.addObject("produto",produto);
-		
-		return modelAndView;
+	public ModelAndView detalhe(@PathVariable("id") Integer id){
+	    ModelAndView modelAndView = new ModelAndView("/produtos/detalhe");
+	    Produto produto = dao.find(id);
+	    modelAndView.addObject("produto", produto);
+	    return modelAndView;
 	}
-
 }
