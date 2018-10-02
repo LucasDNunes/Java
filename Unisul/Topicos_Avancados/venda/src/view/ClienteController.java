@@ -47,8 +47,9 @@ public class ClienteController {
 		
 		clientes.add(cliente);
 		
-		System.out.println(cliente.getNome() + " - " + cliente.getCidade() + " - " + cliente.isBoleto()
-		+ " - " + cliente.isCartao() + " - " + cliente.isDeposito());
+//		System.out.println(cliente.getNome() + " - " + cliente.getCidade() + " - " + cliente.isBoleto()
+//		+ " - " + cliente.isCartao() + " - " + cliente.isDeposito());
+		System.out.println(cliente);
 		
 	}
 }

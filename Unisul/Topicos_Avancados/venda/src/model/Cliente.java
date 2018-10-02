@@ -6,11 +6,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(of= {"nome","cidade","cartao","boleto","deposito"})
 public class Cliente {
 	@Builder.Default
 	private StringProperty nome = new SimpleStringProperty("");

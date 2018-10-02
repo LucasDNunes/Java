@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Topicos_Avancados.iml" filepath="$PROJECT_DIR$/.idea/Topicos_Avancados.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Excecao/Excecao.iml" filepath="$PROJECT_DIR$/Excecao/Excecao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiplasJanelas/MultiplasJanelas.iml" filepath="$PROJECT_DIR$/MultiplasJanelas/MultiplasJanelas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tap/Tap.iml" filepath="$PROJECT_DIR$/Tap/Tap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/venda/venda.iml" filepath="$PROJECT_DIR$/venda/venda.iml" />
     </modules>
   </component>
 </project>

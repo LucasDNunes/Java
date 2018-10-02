@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="view.ExemploController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Label text="Multi thread" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Trabalhador 1" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Quantidade" />
+                                    <TextField fx:id="qtdTrabalhador1" prefHeight="25.0" prefWidth="72.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Tempo" />
+                                    <TextField fx:id="tempoTrabalhador1" prefHeight="25.0" prefWidth="87.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <ProgressBar fx:id="progressoTrabalhador1" accessibleRole="IMAGE_VIEW" prefHeight="18.0" prefWidth="182.0" progress="0.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </ProgressBar>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Trabalhador 2" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Quantidade" />
+                                    <TextField fx:id="qtdTrabalhador2" prefHeight="25.0" prefWidth="72.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Tempo" />
+                                    <TextField fx:id="tempoTrabalhador2" prefHeight="25.0" prefWidth="87.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <ProgressBar fx:id="progressoTrabalhador2" prefHeight="18.0" prefWidth="184.0" progress="0.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ProgressBar>
+                        <Button mnemonicParsing="false" onAction="#iniciarSemThread" text="Iniciar Sem Thread">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#iniciarComThread" text="Iniciar Com thread">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </center>
+               <bottom>
+                  <Button mnemonicParsing="false" onAction="#sair" text="Sair" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

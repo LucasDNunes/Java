@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dfed34a0-403f-49bb-88b0-80e5aa545e15" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Tap/bin/model/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tap/bin/model/Aluno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/venda/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/venda/bin/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/venda/src/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda/src/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venda/src/model/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda/src/view/CadastroProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/venda/src/view/CadastroProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda/src/view/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/venda/src/view/ClienteController.java" afterDir="false" />
+    <list default="true" id="3f68a116-5c11-4c4f-92a6-4656ff99285f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Alura/Java-Spring/casadocodigo/.idea/artifacts/casadocodigo_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Alura/Java-Spring/casadocodigo/.idea/artifacts/casadocodigo_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Alura/Java-Spring/casadocodigo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Alura/Java-Spring/casadocodigo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Alura/Java-Spring/casadocodigo/casadocodigo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Alura/Java-Spring/casadocodigo/casadocodigo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Topicos_Avancados.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,58 +19,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="646283855">
+    <session id="1350012014">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/venda/src/model/Cliente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="72" lean-forward="true" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/venda/src/model/Cliente.java" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -77,10 +39,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
+    <option name="x" value="20" />
     <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -88,45 +50,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Topicos_Avancados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Topicos_Avancados" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Topicos_Avancados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Topicos_Avancados" type="462c0819:PsiDirectoryNode" />
-              <item name="venda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Topicos_Avancados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Topicos_Avancados" type="462c0819:PsiDirectoryNode" />
-              <item name="venda" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Topicos_Avancados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Topicos_Avancados" type="462c0819:PsiDirectoryNode" />
-              <item name="venda" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Topicos_Avancados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Topicos_Avancados" type="462c0819:PsiDirectoryNode" />
-              <item name="venda" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,30 +78,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dfed34a0-403f-49bb-88b0-80e5aa545e15" name="Default Changelist" comment="" />
-      <created>1536103022682</created>
+      <changelist id="3f68a116-5c11-4c4f-92a6-4656ff99285f" name="Default Changelist" comment="" />
+      <created>1538330274213</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1536103022682</updated>
-      <workItem from="1536103040669" duration="107000" />
+      <updated>1538330274213</updated>
+      <workItem from="1538330275863" duration="63000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107000" />
+    <option name="totallyTimeSpent" value="63000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23782235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -201,29 +127,5 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venda/src/model/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="72" lean-forward="true" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
