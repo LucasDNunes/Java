@@ -34,7 +34,7 @@
             </VBox>
          </left>
          <top>
-            <Label text="Excecao" BorderPane.alignment="CENTER">
+            <Label text="Multi thread" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets top="10.0" />
                </BorderPane.margin>

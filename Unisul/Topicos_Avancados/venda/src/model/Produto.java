@@ -6,21 +6,10 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Produto {
-	
-	@Builder.Default
 	private StringProperty nome = new SimpleStringProperty("");
-	@Builder.Default
 	private DoubleProperty valor = new SimpleDoubleProperty(0.0);
-	@Builder.Default
 	private IntegerProperty quantidade = new SimpleIntegerProperty(0);
-	@Builder.Default
 	private DoubleProperty subTotal = new SimpleDoubleProperty(0);
 	
 	public final StringProperty nomeProperty() {

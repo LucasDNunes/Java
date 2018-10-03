@@ -1,5 +1,7 @@
 package view;
 
+import java.util.Objects;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -46,7 +48,7 @@ public class PrincipalController {
 	
 	private Tab tabAberta(String titulo) {
 		for (Tab tab : tabPane.getTabs()) {
-			if (!(tab.getText() == null) && tab.getText().equals(titulo)) {
+			if (!Objects.nonNull(tab.getText()) && tab.getText().equals(titulo)) {
 				return tab;
 			}
 		}

@@ -24,9 +24,7 @@ public class Atleta extends Task<Void>{
 		for (int i = 0; i < distancia.intValue(); i++) {
 			try {
 				Thread.sleep(tempo * 1000);
-				Platform.runLater(() -> {
-					barra.setProgress(barra.getProgress() + incremento);
-				});
+				Platform.runLater(() -> barra.setProgress(barra.getProgress() + incremento));
 			} catch (Exception e) {
 				System.out.println("----ERRO O SEU MERDA-----");
 				e.printStackTrace();
@@ -55,10 +53,4 @@ public class Atleta extends Task<Void>{
 	public void setTempo(Integer tempo) {
 		this.tempo = tempo;
 	}
-	
-	
-	public void iniciar() {
-		
-	}
-
 }
