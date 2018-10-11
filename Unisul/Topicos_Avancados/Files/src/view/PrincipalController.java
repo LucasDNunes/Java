@@ -1,48 +1,59 @@
 package view;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import dadosFile.DadosFile;
-import dadosFile.DadosFileServiceImpl;
+import java.util.Objects;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 
 public class PrincipalController {
 	
-	@FXML TextField txtPath;
-	@FXML TableView<DadosFile> tableView;
-	@FXML TableColumn<DadosFile, String> colNome;
-	@FXML TableColumn<DadosFile, String> colTamanho;
-	
-	private DadosFileServiceImpl dadosFileServiceImpl = new DadosFileServiceImpl();
-	
-	private List<DadosFile> dadosFiles =  new ArrayList<>();
+	@FXML
+	TabPane tabPane;
 	
 	@FXML
-	public void initialize() {
-		dadosFileServiceImpl.inicializaTableView(colNome, colTamanho);
+	public void abreTelaExemplo() {
+		abreTab("Exemplo Arquivos", "Exemplo.fxml");
 	}
 	
 	@FXML
-	public void abreDiretorio() {
-		dadosFileServiceImpl.abreDiretorio(txtPath);
+	public void abreTelaCadastrarAluno() {
+		abreTab("Aluno", "CadastroAluno.fxml");
 	}
 	
 	@FXML
-	public void listar() {
-		dadosFileServiceImpl.listar(txtPath, tableView, dadosFiles);
+	public void abreTelaCadastrarTransporte() {
+		abreTab("Transporte", "CadastroAluno.fxml");
 	}
 	
-	@FXML
-	public void apagarLinhaSelecionada() {
-		dadosFileServiceImpl.apagarLinhaSelecionada(tableView, dadosFiles);
+	private void abreTab(String titulo, String path) {
+		try {
+			Tab tab = tabAberta(titulo);
+			if (tab == null) {
+				tab = new Tab(titulo);
+				tab.setClosable(true);
+				tabPane.getTabs().add(tab);
+				tab.setContent((Node) FXMLLoader.load(getClass().getResource(path)));
+			}
+			selecionaTab(tab);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
-	@FXML
-	public void apagarTodos() {
-		dadosFileServiceImpl.apagarTodos(tableView, dadosFiles);
+	private void selecionaTab(Tab tab) {
+		tabPane.getSelectionModel().select(tab);
+	}
+	
+	private Tab tabAberta(String titulo) {
+		for (Tab tab : tabPane.getTabs()) {
+			if (Objects.nonNull(tab.getText()) && tab.getText().equals(titulo)) {
+				return tab;
+			}
+		}
+		return null;
 	}
 }

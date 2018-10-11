@@ -1,4 +1,4 @@
-package dadosFile;
+package model.dadosFile;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

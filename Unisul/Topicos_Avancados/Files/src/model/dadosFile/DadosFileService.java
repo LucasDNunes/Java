@@ -1,4 +1,4 @@
-package dadosFile;
+package model.dadosFile;
 
 import java.util.List;
 
