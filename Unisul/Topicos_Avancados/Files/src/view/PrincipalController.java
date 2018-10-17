@@ -26,7 +26,7 @@ public class PrincipalController {
 	
 	@FXML
 	public void abreTelaCadastrarTransporte() {
-		abreTab("Transporte", "CadastroAluno.fxml");
+		abreTab("Transporte", "CadastroTransporte.fxml");
 	}
 	
 	private void abreTab(String titulo, String path) {

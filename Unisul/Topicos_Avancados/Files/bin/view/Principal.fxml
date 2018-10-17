@@ -20,7 +20,7 @@
                         <Insets left="8.0" top="8.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#abreTelaCadastrarAluno" text="corredores">
+                  <Button mnemonicParsing="false" onAction="#abreTelaCadastrarAluno" text="Aluno">
                      <VBox.margin>
                         <Insets left="8.0" top="8.0" />
                      </VBox.margin>

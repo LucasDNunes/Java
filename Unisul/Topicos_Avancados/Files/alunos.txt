@@ -1,4 +1,1 @@
-teste,1,ccp
-teste1,12,ccp
-testa,0,ccp
 lucas,5,ccp

@@ -1,0 +1,1 @@
+lucas,5,ccp,PROPRIO,1.0,10.0
