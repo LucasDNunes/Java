@@ -1,1 +1,3 @@
 lucas,5,ccp
+teste,3,ccp
+carlos,8,ccp

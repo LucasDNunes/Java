@@ -93,7 +93,7 @@ public class TransporteServiceImpl implements TransporteService{
 	public void unirAlunoETransporte() {
 		
 		try (
-				FileWriter fileWriter = new FileWriter(UNIDOS_TXT, true);
+				FileWriter fileWriter = new FileWriter(UNIDOS_TXT);
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 				FileReader fileReaderTransportes = new FileReader(TRANPORTE_TXT);
 				BufferedReader bufferedReaderTransportes = new BufferedReader(fileReaderTransportes);
