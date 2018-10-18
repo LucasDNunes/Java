@@ -12,7 +12,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import model.aluno.Aluno;
 
 public class TransporteServiceImpl implements TransporteService{
 	
@@ -57,7 +56,6 @@ public class TransporteServiceImpl implements TransporteService{
 		try (
 				FileWriter fileWriter = new FileWriter(TRANPORTE_TXT, true);
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
-						
 			){
 			
 			Transporte transporte = new Transporte();
@@ -99,7 +97,6 @@ public class TransporteServiceImpl implements TransporteService{
 				BufferedReader bufferedReaderTransportes = new BufferedReader(fileReaderTransportes);
 				FileReader fileReaderAlunos = new FileReader(ALUNOS_TXT);
 				BufferedReader bufferedReaderAlunos = new BufferedReader(fileReaderAlunos);
-						
 			){
 			
 			String linhaTransporte="";
@@ -108,28 +105,9 @@ public class TransporteServiceImpl implements TransporteService{
 			while (Objects.nonNull(linhaTransporte = bufferedReaderTransportes.readLine()) 
 					&& Objects.nonNull(linhaAluno = bufferedReaderAlunos.readLine()) ) {
 				
-				Transporte transporte = new Transporte();
-				Aluno aluno =  new Aluno();
-
-				String[] linhasTranportes = linhaTransporte.split(",");
-				String[] linhasAlunos = linhaAluno.split(",");
-				
-				aluno.setNome(linhasAlunos[0]);
-				aluno.setSemestre(Integer.parseInt(linhasAlunos[1]));
-				aluno.setCurso(linhasAlunos[2]);
-				
-				transporte.setTipoTranposte(linhasTranportes[0]);
-				transporte.setDistancia(Double.parseDouble(linhasTranportes[1]));
-				transporte.setCustoMensal(Double.parseDouble(linhasTranportes[2]));
-				
-				bufferedWriter.append(aluno.getNome()+","+
-						aluno.getSemestre()+","+
-						aluno.getCurso()+","+
-						transporte.getTipoTranposte()+","+
-						transporte.getDistancia()+","+
-						transporte.getCustoMensal()+"\n");
+				bufferedWriter.append(linhaAluno.substring(0, linhaAluno.length()-2)+","+
+						linhaTransporte+"\n");
 			}
-			
 			
 		} catch (Exception e) {
 			e.getMessage();

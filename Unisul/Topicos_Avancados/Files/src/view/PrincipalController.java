@@ -29,6 +29,16 @@ public class PrincipalController {
 		abreTab("Transporte", "CadastroTransporte.fxml");
 	}
 	
+	@FXML
+	public void abreTelaCadastrarProperty() {
+		abreTab("Cad. Property", "CadastroProperty.fxml");
+	}
+	
+	@FXML
+	public void abreTelaProperty() {
+		abreTab("Property", "Property.fxml");
+	}
+	
 	private void abreTab(String titulo, String path) {
 		try {
 			Tab tab = tabAberta(titulo);
