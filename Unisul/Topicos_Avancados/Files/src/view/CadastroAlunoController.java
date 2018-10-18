@@ -8,7 +8,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import model.aluno.Aluno;
-import model.aluno.AlunoService;
 import model.aluno.AlunoServiceImpl;
 
 public class CadastroAlunoController {
@@ -21,20 +20,20 @@ public class CadastroAlunoController {
 	@FXML TableColumn<Aluno, Number> colSemestre;
 	@FXML TableColumn<Aluno, String> colCurso;
 	
-	private AlunoService alunoService =  new AlunoServiceImpl();
+	AlunoServiceImpl alunoServiceImpl =  new AlunoServiceImpl();
 	
 	private List<Aluno> alunos = new ArrayList<>();
 	
 	@FXML
 	public void initialize() {
-		alunoService.inicializaTableView(colNome,colSemestre,colCurso);
-		alunoService.lerArquivo(alunos, tableView);
+		alunoServiceImpl.inicializaTableView(colNome,colSemestre,colCurso);
+		alunoServiceImpl.lerArquivo(alunos, tableView);
 	}
 	
 	@FXML
 	public void cadastrar() {
-		alunoService.gravar(txtNome,txtSemestre,txtCurso);
-		alunoService.lerArquivo(alunos, tableView);
+		alunoServiceImpl.gravar(txtNome,txtSemestre,txtCurso);
+		alunoServiceImpl.lerArquivo(alunos, tableView);
 	}
 	
 }

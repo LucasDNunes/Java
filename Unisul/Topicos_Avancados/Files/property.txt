@@ -1,7 +1,0 @@
-#Arquivo de preferencia
-#Wed Oct 17 21:28:33 BRT 2018
-Largura=800
-RazaoSocial=res
-CorFundo=\#ff
-LogoTipo=C\:\\Users\\apoio.inftb\\Documents\\ibagem.jpg
-Altura=500
