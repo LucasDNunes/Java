@@ -10,6 +10,7 @@ import org.omg.CORBA.Object;
 import javafx.fxml.FXML;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
@@ -40,11 +41,18 @@ public class CadastroPropertyController {
 	public void gravar() {
 		File file = new File(txtPath.getText());
 		if (file.isFile()) {
+			
+			Color color = colorPicker.getValue();
+			String webFormat = String.format("#%02x%02x%02x", 
+					(int) (255 * color.getRed()),
+					(int) (255 * color.getGreen()),
+					(int) (255 * color.getBlue()));
+			
 			Properties properties = new Properties();
 			properties.setProperty("Largura", txtLargura.getText());
 			properties.setProperty("Altura", txtAltura.getText());
 			properties.setProperty("LogoTipo", txtPath.getText());
-			properties.setProperty("CorFundo", "#"+Integer.toHexString(colorPicker.getValue().hashCode()));
+			properties.setProperty("CorFundo", webFormat);
 			properties.setProperty("RazaoSocial", txtRazaoSocial.getText());
 		
 			try (

@@ -1,5 +1,6 @@
 package view;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,25 @@ public class CadastroTransporteController {
 	public void initialize() {
 		transporteService.inicializaTableView(colTipo, colDistancia, colCusto);
 		transporteService.lerArquivo(transportes, tableView);
+		
+		System.out.print(String.format("%-10.10s", "teste     1"));
+		System.out.println(".");
+		System.out.print(String.format(">%-10s<", "testeadest182".substring(0, 10)));
+		System.out.println(".");
+
+		
+		String numero = String.format("%03d", 1).substring(0,3);
+		System.out.println(numero);
+		numero = Integer.valueOf(numero).toString();
+		System.out.println(numero);
+		
+		System.out.println(000000106565.00);
+		String doub = String.format("%06.2f", 10.50).replace(",", ".");
+		System.out.println(doub);
+		double doubl = Double.parseDouble(doub);
+		System.out.println(doubl);
+//		DecimalFormat decimalFormat = new DecimalFormat("###0.00");
+//		System.out.println(decimalFormat.format(Double.parseDouble(doub)));
 	}
 	
 	@FXML
@@ -50,22 +70,7 @@ public class CadastroTransporteController {
 		transporteService.unirAlunoETransporte();
 	}
 	
-	/*  PARA ME AJUDAR NA ATIVIDADE PARA PROVA
- 	System.out.print(String.format("%-10.10s%s", "teste1234590", "hue"));
-	System.out.println(".");
-	System.out.print(String.format(">%-10s<", "testeadest182".substring(0, 10)));
-	System.out.println(".");
-
-	
-	String numero = String.format("%010d", 10);
-	System.out.println(numero);
-	numero = Integer.valueOf(numero).toString();
-	System.out.println(numero);
-	
-	String doub = String.format("%.2f", 106565.00);
-	System.out.println(doub);
-	DecimalFormat decimalFormat = new DecimalFormat("0.00");
-	System.out.println(decimalFormat.format(48)); 
+ 	
  
- */
+ 
 }
