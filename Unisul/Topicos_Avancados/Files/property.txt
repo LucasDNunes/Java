@@ -1,7 +1,7 @@
 #Arquivo de preferencia
-#Wed Oct 17 21:28:33 BRT 2018
-Largura=800
-RazaoSocial=res
-CorFundo=\#ff
-LogoTipo=C\:\\Users\\apoio.inftb\\Documents\\ibagem.jpg
-Altura=500
+#Tue Oct 23 21:25:42 BRT 2018
+Largura=600
+RazaoSocial=TESTEE
+CorFundo=\#334db3
+LogoTipo=C\:\\Users\\lucas.nunes5\\Pictures\\Screenshot_3.jpg
+Altura=600

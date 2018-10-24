@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadastroPropertyController">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadastroPropertyController">
    <children>
       <BorderPane>
          <center>
@@ -57,7 +57,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="txtPath" prefHeight="25.0" prefWidth="90.0" text="C:\Users\apoio.inftb\Documents\ibagem.jpg">
+                        <TextField fx:id="txtPath" onAction="#abreDiretorio" prefHeight="25.0" prefWidth="90.0">
                            <HBox.margin>
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </HBox.margin>
