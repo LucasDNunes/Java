@@ -42,8 +42,4 @@ public class TesteCidade {
 		}
 	}
 	
-	public <T> void buscarId(Class<? extends T> obj) {
-		
-	}
-
 }
