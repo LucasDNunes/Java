@@ -1,5 +1,6 @@
 package model.cidade;
 
+import javafx.beans.property.StringProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,6 +15,11 @@ import lombok.Setter;
 public class Cidade {
 	
 	private Long id;
-	private String cidade;
+	private StringProperty cidade;
 	private String uf;
+	
+	@Override
+	public String toString() {
+		return cidade.getValue();
+	}
 }

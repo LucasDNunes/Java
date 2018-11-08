@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import util.Conexao;
 
@@ -12,9 +13,12 @@ public class AlunoRepository {
 	protected Aluno salvar(Aluno aluno) {
 		try (Connection conn = Conexao.getConexao()){
 			
-			String sql = "insert into aluno(nome) values(?)";
+			String sql = "insert into aluno(nome,idade,cidade) values(?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, aluno.getNome().getValue());
+			preparedStatement.setInt(2, aluno.getIdade().getValue());
+			preparedStatement.setInt(3, aluno.getCidade().getId().intValue());
+			preparedStatement.setInt(4, aluno.getCurso().getId().intValue());
 			preparedStatement.executeUpdate();
 			
 			String sqlSelect = "SELECT * FROM aluno ORDER BY cod DESC LIMIT 1";
@@ -30,9 +34,9 @@ public class AlunoRepository {
 				return Aluno.builder()
 						.id(cod)
 						.nome(new SimpleStringProperty(nome))
-						.idade(idade)
-						.cidade(cidade)
-						.curso(curso)
+						.idade(new SimpleIntegerProperty(idade))
+//						.cidade(cidade)
+//						.curso(curso)
 						.build();
 			}
 			
@@ -41,6 +45,7 @@ public class AlunoRepository {
 		}
 		return null;
 	}
+	
 	
 	protected Aluno findById(Long id) {
 		try(Connection conn = Conexao.getConexao()) {
@@ -57,9 +62,9 @@ public class AlunoRepository {
 				return Aluno.builder()
 						.id(cod)
 						.nome(new SimpleStringProperty(nome))
-						.idade(idade)
-						.cidade(cidade)
-						.curso(curso)
+						.idade(new SimpleIntegerProperty(idade))
+//						.cidade(cidade)
+//						.curso(curso)
 						.build();
 			}
 		} catch (Exception e) {
@@ -68,4 +73,6 @@ public class AlunoRepository {
 		
 		return null;
 	}
+	
+	
 }
