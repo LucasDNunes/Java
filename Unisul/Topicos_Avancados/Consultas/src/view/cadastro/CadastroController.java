@@ -3,6 +3,8 @@ package view.cadastro;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import com.jfoenix.controls.JFXTimePicker;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,8 +30,13 @@ public class CadastroController {
 	@FXML TableColumn<Atendimento, String> colEstagiario;
 	@FXML TableColumn<Atendimento, String> colDia;
 	
+	@FXML JFXTimePicker timePicker;
+	
 	@FXML
 	public void initialize() {
+		
+		timePicker.getValue();
+		
 		long endTime = 23;
 		Label timeLabel = new Label();
 		DateFormat timeFormat = new SimpleDateFormat( "HH:mm:ss" );
