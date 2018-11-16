@@ -1,25 +1,19 @@
-package model.atendimento;
-
-import java.time.LocalDate;
+package model.estagiario;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import model.estagiario.Estagiario;
-import model.sala.Sala;
 
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Atendimento {
+public class Estagiario {
 	
 	private Long id;
-	private Sala sala;
-	private LocalDate data;
-	private Estagiario estagiario;
-	
+	private String nome;
+	private Integer semestre;
 }

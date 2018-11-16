@@ -4,16 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -42,7 +37,7 @@ public class CadastroController {
 	@FXML TableColumn<Aluno, String> colCurso;
 	
 	private AlunoServiceImpl alunoService = new AlunoServiceImpl();
-	private ArrayList<Aluno> alunos = new ArrayList<>();
+	private List<Aluno> alunos = new ArrayList<>();
 	
 
 	@FXML
@@ -65,10 +60,11 @@ public class CadastroController {
 		if (txtFiltro.getText().equals("")) {
 			tableView.setItems(FXCollections.observableArrayList(alunos));
 		} else {
-			tableView.setItems(FXCollections.observableArrayList(alunos.stream().
-					filter(a -> a.getNome().getValue().startsWith(txtFiltro.getText())).collect(Collectors.toList())));
+			tableView.setItems(FXCollections.observableArrayList(
+					alunos.stream()
+					.filter(a -> a.getNome().equals(txtFiltro.getText()))
+					.collect(Collectors.toList())));
 		}
-		
 	}
 	
 	
@@ -106,7 +102,7 @@ public class CadastroController {
 	
 	private void listarAlunos() {
 		tableView.getItems().clear();
-		
+		List<Aluno> alunos = new ArrayList<>();
 		try(Connection conn = Conexao.getConexao()) {
 			String sqlSelect = "SELECT a.cod as cod, a.nome as nome, a.idade as idade,a.curso as curso,"
 					+ " cu.cod as codCurso, cu.curso as nomeCurso, c.cod as codCidade, c.nome as nomeCidade "

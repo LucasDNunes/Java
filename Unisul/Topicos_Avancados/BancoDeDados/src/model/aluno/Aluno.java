@@ -11,8 +11,8 @@ import model.cidade.Cidade;
 import model.curso.Curso;
 
 @Builder
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Aluno {
@@ -24,6 +24,5 @@ public class Aluno {
 	private Cidade cidade;
 	
 	private Curso curso;
-
 	
 }

@@ -47,7 +47,7 @@ public class AlunoRepository {
 	}
 	
 	
-	protected Aluno findById(Long id) {
+	protected Aluno BuscarPorId(Long id) {
 		try(Connection conn = Conexao.getConexao()) {
 			String sqlSelect = "SELECT * FROM aluno WHERE cod="+id;
 			PreparedStatement preparedStatement = conn.prepareStatement(sqlSelect);

@@ -2,11 +2,13 @@ package view.main;
 
 import java.util.Objects;
 
+import core.util.MensagemUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.Alert.AlertType;
 
 public class PricnipalController {
 	@FXML
@@ -14,13 +16,18 @@ public class PricnipalController {
 	
 	@FXML
 	public void abreTelaCadastro() {
-		abreTab("Cadastro", "../cadastro/cadastro.fxml");
+		abreTab("Sala", "../cadastrosala/CadastroSala.fxml");
+	}
+	
+	@FXML
+	public void abreTelaCadastroEstagiario() {
+		abreTab("Estagiario", "../estagiario/Estagiario.fxml");
 	}
 	
 	private void abreTab(String titulo, String path) {
 		try {
 			Tab tab = tabAberta(titulo);
-			if (tab == null) {
+			if (Objects.isNull(tab)) {
 				tab = new Tab(titulo);
 				tab.setClosable(true);
 				tabPane.getTabs().add(tab);
@@ -28,7 +35,7 @@ public class PricnipalController {
 			}
 			selecionaTab(tab);
 		} catch (Exception e) {
-			e.printStackTrace();
+			MensagemUtils.mostraMensagem(e.getMessage(),AlertType.INFORMATION); 
 		}
 	}
 	

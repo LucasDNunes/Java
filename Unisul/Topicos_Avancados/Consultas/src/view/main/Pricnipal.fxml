@@ -15,9 +15,14 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#abreTelaCadastro" text="Cadastro">
+                  <Button mnemonicParsing="false" onAction="#abreTelaCadastro" text="Sala">
                      <VBox.margin>
                         <Insets left="8.0" top="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#abreTelaCadastroEstagiario" text="Estagiario">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </VBox.margin>
                   </Button>
                </children>
