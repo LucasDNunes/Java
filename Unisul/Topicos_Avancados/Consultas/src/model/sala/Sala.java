@@ -1,10 +1,6 @@
 package model.sala;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Builder
 @NoArgsConstructor
@@ -14,6 +10,11 @@ import lombok.Setter;
 public class Sala {
 	
 	private Long id;
-	private String sala;
-	private Long numero;
+	private String nome;
+	private Integer numero;
+
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }

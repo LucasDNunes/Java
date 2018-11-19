@@ -7,5 +7,7 @@ public interface EdicaoService {
 	
 	Estagiario objectMap(TextField txtNome, TextField txtSemestre);
 	
-	void cadastrar(TextField txtNome, TextField txtSemestre);
+	void atualizar(TextField txtNome, TextField txtSemestre, Estagiario estagiarioPai);
+
+	void voltarTelaPai(TextField txtNome);
 }

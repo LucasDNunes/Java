@@ -16,4 +16,9 @@ public class Estagiario {
 	private Long id;
 	private String nome;
 	private Integer semestre;
+
+	@Override
+	public String toString() {
+		return  this.nome;
+	}
 }

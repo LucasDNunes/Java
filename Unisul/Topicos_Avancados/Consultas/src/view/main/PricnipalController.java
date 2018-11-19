@@ -16,12 +16,17 @@ public class PricnipalController {
 	
 	@FXML
 	public void abreTelaCadastro() {
-		abreTab("Sala", "../cadastrosala/CadastroSala.fxml");
+		abreTab("Sala", "../cadastrosala/CadastroAtendimento.fxml");
 	}
 	
 	@FXML
 	public void abreTelaCadastroEstagiario() {
 		abreTab("Estagiario", "../estagiario/Estagiario.fxml");
+	}
+
+	@FXML
+	public void abreTelaCadastroSala() {
+		abreTab("Sala", "../sala/Sala.fxml");
 	}
 	
 	private void abreTab(String titulo, String path) {

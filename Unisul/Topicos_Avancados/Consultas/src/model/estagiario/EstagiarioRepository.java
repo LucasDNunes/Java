@@ -25,7 +25,10 @@ public class EstagiarioRepository {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				return Optional.of(
-						Estagiario.builder().id(resultSet.getLong("id")).nome((resultSet.getString("nome"))).build());
+						Estagiario.builder()
+								.id(resultSet.getLong("id"))
+								.nome((resultSet.getString("nome")))
+								.build());
 			}
 		} catch (Exception e) {
 			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
@@ -39,10 +42,25 @@ public class EstagiarioRepository {
 
 		Optional<Estagiario> estagiarioExistente = buscarPorId(estagiario.getId());
 		if (estagiarioExistente.isPresent()) {
-			excluir(estagiarioExistente.get().getId());
-			return salvarERetornarSalvo(estagiario);
+			update(estagiario);
+			return estagiario;
 		}
 		return salvarERetornarSalvo(estagiario);
+	}
+
+	protected boolean update(Estagiario estagiario){
+		String sql = "UPDATE estagiario SET nome=?, semestre=? WHERE id=?";
+		try (Connection conn = Conexao.getConexao()) {
+			PreparedStatement preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, estagiario.getNome());
+			preparedStatement.setInt(2, estagiario.getSemestre());
+			preparedStatement.setInt(3, estagiario.getId().intValue());
+			preparedStatement.execute();
+			return true;
+		} catch (Exception e) {
+			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
+		}
+		return false;
 	}
 
 	protected boolean excluir(Long id) {
@@ -88,7 +106,7 @@ public class EstagiarioRepository {
 		return null;
 	}
 	
-	protected ArrayList<Estagiario> findAll() {
+	public ArrayList<Estagiario> findAll() {
 		
 		ArrayList<Estagiario> estagiarios = new ArrayList<>();
 		

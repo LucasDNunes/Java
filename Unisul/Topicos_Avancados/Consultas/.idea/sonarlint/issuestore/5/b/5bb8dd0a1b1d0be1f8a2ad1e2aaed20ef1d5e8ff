@@ -1,0 +1,12 @@
+
+ksquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ
+ksquid:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ
+fsquid:S2095Z"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­´Èå
+^squid:S2095t"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹
+“squid:S1319m"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(«äÙşÿÿÿÿ8â£ÌÁò,
+ksquid:S2095F"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ
+nsquid:S2077"RUse a variable binding mechanism to construct this query instead of concatenation.(Æêå†şÿÿÿÿ
+rsquid:S20956"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8Œ‡şÎò,
+ksquid:S2095s"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ
+^squid:S2095["GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹
+^squid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹

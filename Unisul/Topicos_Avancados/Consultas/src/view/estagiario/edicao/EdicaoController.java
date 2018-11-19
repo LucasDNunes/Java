@@ -17,46 +17,43 @@ public class EdicaoController {
 	
 	@FXML private TextField txtNome;
 	@FXML private TextField txtSemestre;
+
+	private Estagiario estagiarioPai;
 	
 	private EdicaoServiceImpl edicaoService = new EdicaoServiceImpl();
 	
 	@FXML
 	private void atualiar() {
 		
-		edicaoService.cadastrar(txtNome, txtSemestre);
+		edicaoService.atualizar(txtNome, txtSemestre, this.estagiarioPai);
 		
-		FXMLLoader lo = new FXMLLoader(getClass().getResource("../Estagiario.fxml"));
-		try {
-			lo.load();
-		} catch (IOException e) {
-			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
-		}
-
-		EstagiarioController ca = lo.getController();
-		
-		
-		Stage se = (Stage) txtNome.getScene().getWindow();
-		se.close();
-		
-		se.setOnCloseRequest((WindowEvent event1) -> {
-	        
-	    });
+//		FXMLLoader lo = new FXMLLoader(getClass().getResource("../Estagiario.fxml"));
+//		try {
+//			lo.load();
+//		} catch (IOException e) {
+//			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
+//		}
+//
+//		EstagiarioController ca = lo.getController();
+//
+//
+//		Stage se = (Stage) txtNome.getScene().getWindow();
+//		se.close();
+//
+//		se.setOnCloseRequest((WindowEvent event1) -> {
+//
+//	    });
 	}
 	
 	@FXML
 	private void cancelar() {
-		try {
-			FXMLLoader lo = new FXMLLoader(getClass().getResource("../Estagiario.fxml"));
-			lo.load();
-		} catch (IOException e) {
-			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
-		}
-		
-		Stage se = (Stage) txtNome.getScene().getWindow();
-		se.close();
+
+		edicaoService.voltarTelaPai(txtNome);
+
 	}
 	
 	public void atualizarEstagiario(Estagiario estagiario) {
+		this.estagiarioPai = estagiario;
 		txtNome.setText(estagiario.getNome());
 		txtSemestre.setText(estagiario.getSemestre().toString());
 	}

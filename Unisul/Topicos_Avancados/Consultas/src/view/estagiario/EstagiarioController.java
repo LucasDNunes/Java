@@ -63,7 +63,6 @@ public class EstagiarioController {
     	estagiarioService.editarSelecionado(btnExcluir, tableView, estagiarios);
     }
     
-    
     @FXML
     void filtrar() {
     	estagiarioService.filtrar(txtFiltro, tableView, estagiarios);

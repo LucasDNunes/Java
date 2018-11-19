@@ -1,10 +1,14 @@
 package model.estagiario.edicao;
 
 import core.util.MensagemUtils;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.estagiario.Estagiario;
 import model.estagiario.EstagiarioRepository;
+
+import java.io.IOException;
 
 public class EdicaoServiceImpl extends EstagiarioRepository implements EdicaoService{
 
@@ -22,10 +26,25 @@ public class EdicaoServiceImpl extends EstagiarioRepository implements EdicaoSer
 	}
 
 	@Override
-	public void cadastrar(TextField txtNome, TextField txtSemestre) {
+	public void atualizar(TextField txtNome, TextField txtSemestre, Estagiario estagiarioPai) {
 		Estagiario map = objectMap(txtNome, txtSemestre);
-		salvar(map);
+		estagiarioPai.setNome(map.getNome());
+		estagiarioPai.setSemestre(map.getSemestre());
+		salvar(estagiarioPai);
 		
 	}
-	
+
+	@Override
+	public void voltarTelaPai(TextField txtNome) {
+		try {
+			FXMLLoader lo = new FXMLLoader(getClass().getResource("../../../view/estagiario/Estagiario.fxml"));
+			lo.load();
+		} catch (IOException e) {
+			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
+		}
+
+		Stage se = (Stage) txtNome.getScene().getWindow();
+		se.close();
+	}
+
 }
