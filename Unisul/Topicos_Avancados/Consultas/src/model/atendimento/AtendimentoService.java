@@ -17,12 +17,12 @@ public interface AtendimentoService {
     void cadastrar(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario, DatePicker dpData, TextField txtHoraInicio, TextField txtHoraFim, TableView<Atendimento> tableView, List<Atendimento> atendimentos);
 
     void limparTela(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario, DatePicker dpData, TextField txtHoraInicio, TextField txtHoraFim);
-//
-//    void editarOuexcluir(Button btnExcluir, Button btnEditar);
-//
-//    void editarSelecionado(Button btnExcluir, TableView<Atendimento> tableView, List<Atendimento> atendimentos);
-//
-//    void excluirSelecionado(Button btnExcluir, TableView<Atendimento> tableView, List<Atendimento> atendimentos);
-//
+
+    void editarOuexcluir(Button btnExcluir, Button btnEditar);
+
+    void editarSelecionado(Button btnEditar, TableView<Atendimento> tableView, List<Atendimento> atendimentos);
+
+    void excluirSelecionado(Button btnExcluir, TableView<Atendimento> tableView, List<Atendimento> atendimentos);
+
 //    void filtrar(TextField txtFiltro, TableView<Atendimento> tableView, List<Atendimento> atendimentos);
 }

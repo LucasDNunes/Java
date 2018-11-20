@@ -5,36 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85518e1f-dc41-47a3-859f-ec93c10db96e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/sala/edicao/EdicaoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/sala/edicao/EdicaoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/sala/Sala.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/sala/SalaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/sala/edicao/Edicao.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/sala/edicao/EdicaoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastro.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca284453d41d95647a771a90238a45f520881452" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ce4064127a9faa52ae87d4632056acc8bd533492" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebe269838809c03600f0ce3c4a0d2f5fe216dcde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Consultas.db" beforeDir="false" afterPath="$PROJECT_DIR$/Consultas.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/atendimento/Atendimento$AtendimentoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/atendimento/Atendimento$AtendimentoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/atendimento/Atendimento.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/atendimento/Atendimento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/sala/Sala.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/sala/Sala.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/atendimento/Atendimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/atendimento/Atendimento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/atendimento/AtendimentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/atendimento/AtendimentoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/atendimento/AtendimentoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/atendimento/AtendimentoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/estagiario/Estagiario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/estagiario/Estagiario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/estagiario/EstagiarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/estagiario/EstagiarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/sala/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/sala/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/sala/SalaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/sala/SalaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/sala/SalaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/sala/SalaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/sala/SalaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/sala/SalaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/cadastrosala/CadastroSala.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimento.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/cadastrosala/CadastroSalaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/estagiario/EstagiarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/estagiario/EstagiarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/estagiario/edicao/EdicaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/estagiario/edicao/EdicaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/main/Pricnipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/Pricnipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/main/PricnipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/main/PricnipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimento.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimento.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,31 +53,32 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="9" />
-          <entry key="java" value="57" />
+          <entry key="fxml" value="14" />
+          <entry key="java" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="57" />
-          <entry key="XML" value="9" />
+          <entry key="JAVA" value="65" />
+          <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="java" value="2903" />
+          <entry key="java" value="3611" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2902" />
+          <entry key="JAVA" value="3610" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="SQL" value="1" />
         </counts>
@@ -105,26 +90,54 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/estagiario/EstagiarioServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="23" column="81" selection-start-line="23" selection-start-column="81" selection-end-line="23" selection-end-column="81" />
+            <state relative-caret-position="168">
+              <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="76" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/estagiario/EstagiarioService.java">
+        <entry file="file://$PROJECT_DIR$/src/view/estagiario/EstagiarioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="82">
+              <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+            <state relative-caret-position="134">
+              <caret line="80" column="128" selection-start-line="80" selection-start-column="128" selection-end-line="80" selection-end-column="128" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastroController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#795#796#0" expanded="true" />
+                <element signature="e#885#886#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+                <element signature="e#961#962#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="710">
+              <caret line="60" column="113" selection-start-line="60" selection-start-column="113" selection-end-line="60" selection-end-column="113" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,20 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
+            <state relative-caret-position="322">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,10 +158,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/atendimento/Atendimento.java">
+        <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="203">
+              <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,8 +172,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="368">
+              <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -179,8 +183,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -219,10 +223,14 @@
         <option value="$PROJECT_DIR$/src/model/estagiario/Estagiario.java" />
         <option value="$PROJECT_DIR$/src/model/estagiario/EstagiarioRepository.java" />
         <option value="$PROJECT_DIR$/src/model/sala/SalaRepository.java" />
-        <option value="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java" />
-        <option value="$PROJECT_DIR$/src/model/atendimento/AtendimentoService.java" />
-        <option value="$PROJECT_DIR$/src/model/atendimento/AtendimentoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java" />
+        <option value="$PROJECT_DIR$/src/model/atendimento/AtendimentoService.java" />
+        <option value="$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java" />
+        <option value="$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastro.fxml" />
+        <option value="$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoService.java" />
+        <option value="$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastroController.java" />
+        <option value="$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/model/atendimento/AtendimentoServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -244,7 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -276,7 +283,23 @@
               <item name="Consultas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="atendimento" type="462c0819:PsiDirectoryNode" />
+              <item name="edicaoAtendimento" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Consultas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Consultas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="estagiario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Consultas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Consultas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="estagiario" type="462c0819:PsiDirectoryNode" />
+              <item name="edicao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Consultas" type="b2602c69:ProjectViewProjectNode" />
@@ -303,19 +326,43 @@
               <item name="Consultas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="cadastrosala" type="462c0819:PsiDirectoryNode" />
+              <item name="edicaoAtendimento" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Consultas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Consultas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="estagiario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Consultas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Consultas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="estagiario" type="462c0819:PsiDirectoryNode" />
+              <item name="edicao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Consultas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Consultas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="estagiarioco&#9;PSI&#9;JAVA://view.estagiario.EstagiarioController" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542598561234" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542684599308" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/SceneBuilder/SceneBuilder.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -369,11 +416,12 @@
       <workItem from="1542419443129" duration="623000" />
       <workItem from="1542491306738" duration="5199000" />
       <workItem from="1542555225939" duration="19482000" />
+      <workItem from="1542678777836" duration="5143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25304000" />
+    <option name="totallyTimeSpent" value="30447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,8 +434,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22206303" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22206303" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -396,7 +445,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32884097" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32884097" />
       <window_info anchor="bottom" x="-1360" y="23" width="1360" height="705" id="Debug" order="3" type="WINDOWED" weight="0.32614556" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -424,30 +473,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java</url>
-          <line>105</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/view/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -457,21 +482,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/main/Pricnipal.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/main/PricnipalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -486,27 +507,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/sala/Sala.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/sala/edicao/Edicao.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="47" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/sala/edicao/EdicaoService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -515,13 +529,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/estagiario/EstagiarioController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -552,20 +559,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/estagiario/edicao/EdicaoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -615,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/atendimento/Atendimento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/sala/SalaRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -655,50 +641,127 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/estagiario/EstagiarioServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="23" column="81" selection-start-line="23" selection-start-column="81" selection-end-line="23" selection-end-column="81" />
+        <state relative-caret-position="168">
+          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="76" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastro.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/atendimento/Atendimento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="322">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/estagiario/edicao/EdicaoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="46" column="19" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="46" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/estagiario/edicao/EdicaoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/estagiario/EstagiarioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="60" column="113" selection-start-line="60" selection-start-column="113" selection-end-line="60" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/atendimento/edicaoAtendimento/EdicaoAtendimentoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimento.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/edicaoAtendimento/EdicaoCadastroController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimentoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/cadastrosala/CadastroAtendimento.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        <state relative-caret-position="368">
+          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/atendimento/AtendimentoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
+        <state relative-caret-position="134">
+          <caret line="80" column="128" selection-start-line="80" selection-start-column="128" selection-end-line="80" selection-end-column="128" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

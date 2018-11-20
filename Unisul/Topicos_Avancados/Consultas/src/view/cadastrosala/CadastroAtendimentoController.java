@@ -26,21 +26,24 @@ public class CadastroAtendimentoController {
 
 	private AtendimentoServiceImpl atendimentoService = new AtendimentoServiceImpl();
 	
-//	@FXML TextField txtEstagiario;
-	@FXML TextField txtHoraInicio;
-	@FXML TextField txtHoraFim;
-	
-	@FXML ComboBox<Sala> cbSala;
-	@FXML ComboBox<Estagiario> cbEstagiario;
+	@FXML private TextField txtHoraInicio;
+	@FXML private TextField txtHoraFim;
+	@FXML private TextField txtFiltro;
+
+	@FXML private ComboBox<Sala> cbSala;
+	@FXML private ComboBox<Estagiario> cbEstagiario;
 
     @FXML
     private DatePicker dpData;
 
-	@FXML TableView<Atendimento> tableView;
-	@FXML TableColumn<Atendimento, String> colSala;
-	@FXML TableColumn<Atendimento, String> colEstagiario;
-	@FXML TableColumn<Atendimento, String> colDia;
-	@FXML TableColumn<Atendimento, String> colHora;
+    @FXML private Button btnEditar;
+    @FXML private Button btnExcluir;
+
+	@FXML private TableView<Atendimento> tableView;
+	@FXML private TableColumn<Atendimento, String> colSala;
+	@FXML private TableColumn<Atendimento, String> colEstagiario;
+	@FXML private TableColumn<Atendimento, String> colDia;
+	@FXML private TableColumn<Atendimento, String> colHora;
 
 
 	private List<Atendimento> atendimentos = new ArrayList<>();
@@ -54,7 +57,27 @@ public class CadastroAtendimentoController {
     public void cadastrar(){
 	    atendimentoService.cadastrar(cbSala, cbEstagiario, dpData, txtHoraInicio,txtHoraFim, tableView, atendimentos);
     }
-	
+
+	@FXML
+	void selecionarAtendimento() {
+		atendimentoService.editarOuexcluir(btnExcluir, btnEditar);
+	}
+
+    @FXML
+    void excluir() {
+        atendimentoService.excluirSelecionado(btnExcluir, tableView, atendimentos);
+    }
+
+    @FXML
+    void editar() {
+        atendimentoService.editarSelecionado(btnExcluir, tableView, atendimentos);
+    }
+
+//    @FXML
+//    void filtrar() {
+//        atendimentoService.filtrar(txtFiltro, tableView, estagiarios);
+//    }
+
 	private StringProperty DateToString(LocalDate data) {
 		LocalDate localDate = data;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

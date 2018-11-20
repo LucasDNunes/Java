@@ -7,8 +7,6 @@ V
 &bin/view/estagiario/edicao/Edicao.fxml,e\8\e81746821bd35cd0cf937c136c64f2165f64ff71
 S
 #bin/view/estagiario/Estagiario.fxml,5\b\5bd4d0cbaccbff3ae2df306e5c96114ffec849a9
-W
-'bin/view/cadastrosala/CadastroSala.fxml,e\b\ebe269838809c03600f0ce3c4a0d2f5fe216dcde
 P
  src/core/util/MensagemUtils.java,6\5\6595f9deb33629fb3bbdb9035dddf0ae2869a91e
 K
@@ -25,10 +23,6 @@ V
 0src/view/estagiario/edicao/EdicaoController.java,c\e\ce269cef113a5b86ac78c04501380e6cc604f679
 S
 #src/view/estagiario/Estagiario.fxml,2\5\25a74f4a610a7b0114127c1b6bfe24b7a70dada2
-W
-'src/view/cadastrosala/CadastroSala.fxml,c\e\ce4064127a9faa52ae87d4632056acc8bd533492
-a
-1src/view/cadastrosala/CadastroSalaController.java,c\a\ca284453d41d95647a771a90238a45f520881452
 H
 src/model/sala/Sala.java,e\0\e064a9bfca1d96155cb0a7863996b21057167aeb
 O

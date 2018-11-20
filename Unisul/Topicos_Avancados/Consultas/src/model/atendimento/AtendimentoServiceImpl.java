@@ -3,11 +3,18 @@ package model.atendimento;
 import core.util.MensagemUtils;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.estagiario.Estagiario;
 import model.estagiario.EstagiarioRepository;
 import model.sala.Sala;
 import model.sala.SalaRepository;
+import view.cadastrosala.edicaoAtendimento.EdicaoCadastroController;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -45,7 +52,7 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
         Atendimento atendimento = objectMap(cbSala, cbEstagiario, dpData, txtHoraInicio, txtHoraFim);
         Atendimento salvo = salvar(atendimento);
         atendimentos.add(salvo);
-        tableView.setItems(FXCollections.observableArrayList(atendimento));
+        tableView.setItems(FXCollections.observableArrayList(atendimentos));
         limparTela(cbSala, cbEstagiario, dpData, txtHoraInicio, txtHoraFim);
         MensagemUtils.mostraMensagem("Atendimento Cadastrado!", Alert.AlertType.INFORMATION);
     }
@@ -57,6 +64,49 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
         dpData.setValue(null);
         txtHoraInicio.setText(null);
         txtHoraFim.setText(null);
+    }
+
+    @Override
+    public void editarOuexcluir(Button btnExcluir, Button btnEditar) {
+        btnEditar.setDisable(false);
+        btnExcluir.setDisable(false);
+    }
+
+    @Override
+    public void editarSelecionado(Button btnEditar, TableView<Atendimento> tableView, List<Atendimento> atendimentos) {
+        Atendimento atendimento = tableView.getSelectionModel().getSelectedItem();
+        Stage stage = new Stage();
+        try {
+
+            FXMLLoader loader =  new FXMLLoader(getClass().getResource("../../view/cadastrosala/edicaoAtendimento/EdicaoCadastro.fxml"));
+            Parent root = loader.load();
+            stage.setScene(new Scene(root));
+            stage.initOwner(btnEditar.getScene().getWindow());
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+
+            EdicaoCadastroController edicaoController = loader.getController();
+            edicaoController.atualizarEstagiario(atendimento);
+            stage.show();
+        } catch (Exception e) {
+            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+        }
+        btnEditar.setDisable(true);
+    }
+
+    @Override
+    public void excluirSelecionado(Button btnExcluir, TableView<Atendimento> tableView, List<Atendimento> atendimentos) {
+        Atendimento atendimento = tableView.getSelectionModel().getSelectedItem();
+        boolean pergunta = MensagemUtils.mostraMensagemPergunta("Excluir Atendimento ?");
+
+        if (pergunta) {
+            excluir(atendimento.getId());
+            atendimentos.remove(atendimento);
+            tableView.setItems(FXCollections.observableArrayList(atendimentos));
+        }
+
+        btnExcluir.setDisable(true);
     }
 
     private void preencheEstagiarioESala(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario) {
