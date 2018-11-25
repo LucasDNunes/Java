@@ -1,48 +1,32 @@
 package view.estagiario.edicao;
 
-import java.io.IOException;
 
-import core.util.MensagemUtils;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.estagiario.Estagiario;
 import model.estagiario.edicao.EdicaoServiceImpl;
-import view.estagiario.EstagiarioController;
 
 public class EdicaoController {
 	
 	@FXML private TextField txtNome;
 	@FXML private TextField txtSemestre;
+	@FXML private Button btnAtualizar;
 
 	private Estagiario estagiarioPai;
 	
 	private EdicaoServiceImpl edicaoService = new EdicaoServiceImpl();
 	
+	public void initialize() {
+		edicaoService.initialize(btnAtualizar, txtNome);
+	}
+
 	@FXML
-	private void atualiar() {
+	public void atualiar() {
 		
 		edicaoService.atualizar(txtNome, txtSemestre, this.estagiarioPai);
-		
-//		FXMLLoader lo = new FXMLLoader(getClass().getResource("../Estagiario.fxml"));
-//		try {
-//			lo.load();
-//		} catch (IOException e) {
-//			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
-//		}
-//
-//		EstagiarioController ca = lo.getController();
-//
-//
-//		Stage se = (Stage) txtNome.getScene().getWindow();
-//		se.close();
-//
-//		se.setOnCloseRequest((WindowEvent event1) -> {
-//
-//	    });
 	}
 	
 	@FXML

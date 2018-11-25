@@ -1,6 +1,3 @@
 
-nsquid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(›¬³Ñùÿÿÿÿ8þ¨Ùò,
-hsquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(ÊÏâ8þ¨Ùò,
-isquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(¡ùˆ8þ¨Ùò,
-nsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ8þ¨Ùò,
-isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(þ¾»½8þ¨Ùò,
+_squid:UselessImportCheck"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8ØòÄ³ô,
+_squid:UselessImportCheck"5Remove this unused import 'javafx.stage.WindowEvent'.(‚ƒ×r8ØòÄ³ô,

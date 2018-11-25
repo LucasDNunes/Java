@@ -1,23 +1,23 @@
 
-ksquid:S11920"HDefine a constant instead of duplicating this literal "horaFim" 3 times.(ñÁ™Ñøÿÿÿÿ8ûÍÎò,
-·squid:S1192"˜Define a constant instead of duplicating this literal "SELECT a.id as id, a.data as data, a.'hora-inicio' as horaIni, a.'hora-fim' as horaFim," 3 times.(ó™úÉ8®÷µÏò,
-jsquid:S1192%"GDefine a constant instead of duplicating this literal "salaId" 3 times.(±·ìöÿÿÿÿÿ8ûÍÎò,
-fsquid:S2095¡"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8äåêÉò,
-ssquid:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8ÙíŠÂò,
-lsquid:S1192&"IDefine a constant instead of duplicating this literal "nomeSala" 3 times.(„»¹ûÿÿÿÿ8ûÍÎò,
-isquid:S1192'"KDefine a constant instead of duplicating this literal "numeroSala" 3 times.(­Ïæ8ûÍÎò,
-rsquid:S2095]"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8äåêÉò,
-msquid:S1192+"ODefine a constant instead of duplicating this literal "nomeEstagiario" 3 times.(Ìá™ü8ûÍÎò,
-†squid:S1192"cDefine a constant instead of duplicating this literal " e.semestre as semestreEstagiario " 3 times.(ã»òÿÿÿÿÿ8ı¯ËÎò,
-ksquid:S1192/"HDefine a constant instead of duplicating this literal "horaIni" 3 times.(ìâú‡øÿÿÿÿ8ûÍÎò,
-µsquid:S1192"–Define a constant instead of duplicating this literal "FROM atendimento a JOIN sala s ON a.sala=s.id JOIN estagiario e ON a.estagiario=e.id " 3 times.(æÔ¹ê8ÛìºÏò,
-esquid:S2095y"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8äåêÉò,
-rsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8äåêÉò,
-squid:S1319–"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ãì•¹8äåêÉò,
-rsquid:S2095I"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ŞÜÏò,
-Òsquid:S1192"®Define a constant instead of duplicating this literal " s.id as salaId, s.nome as nomeSala, s.numero as numeroSala, e.id as estagiarioId, e.nome as nomeEstagiario, " 3 times.(†ƒªñıÿÿÿÿ8ı¯ËÎò,
-rsquid:S2095k"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8äåêÉò,
-psquid:S1192*"MDefine a constant instead of duplicating this literal "estagiarioId" 3 times.(Î™Ïæÿÿÿÿÿ8ûÍÎò,
-vsquid:S1192,"SDefine a constant instead of duplicating this literal "semestreEstagiario" 3 times.(Ìÿ‘Íøÿÿÿÿ8ûÍÎò,
-msquid:S2095x"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­´Èå8ÙíŠÂò,
-esquid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8äåêÉò,
+ssquid:S2095¡"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8ÙíŠÂò,
+ksquid:S11921"HDefine a constant instead of duplicating this literal "horaFim" 3 times.(ñÁ™Ñøÿÿÿÿ8ûÍÎò,
+msquid:S2095y"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­´Èå8ÙíŠÂò,
+rsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8äåêÉò,
+msquid:S1192,"ODefine a constant instead of duplicating this literal "nomeEstagiario" 3 times.(Ìá™ü8ûÍÎò,
+ksquid:S11920"HDefine a constant instead of duplicating this literal "horaIni" 3 times.(ìâú‡øÿÿÿÿ8ûÍÎò,
+Òsquid:S1192"®Define a constant instead of duplicating this literal " s.id as salaId, s.nome as nomeSala, s.numero as numeroSala, e.id as estagiarioId, e.nome as nomeEstagiario, " 3 times.(†ƒªñıÿÿÿÿ8ı¯ËÎò,
+·squid:S1192"˜Define a constant instead of duplicating this literal "SELECT a.id as id, a.data as data, a.'hora-inicio' as horaIni, a.'hora-fim' as horaFim," 3 times.(ó™úÉ8®÷µÏò,
+asquid:UselessImportCheck"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8’ÍÒ²ô,
+jsquid:S1192&"GDefine a constant instead of duplicating this literal "salaId" 3 times.(±·ìöÿÿÿÿÿ8ûÍÎò,
+isquid:S1192("KDefine a constant instead of duplicating this literal "numeroSala" 3 times.(­Ïæ8ûÍÎò,
+psquid:S1192+"MDefine a constant instead of duplicating this literal "estagiarioId" 3 times.(Î™Ïæÿÿÿÿÿ8ûÍÎò,
+†squid:S1192"cDefine a constant instead of duplicating this literal " e.semestre as semestreEstagiario " 3 times.(ã»òÿÿÿÿÿ8ı¯ËÎò,
+esquid:S2095z"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8äåêÉò,
+rsquid:S2095^"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8äåêÉò,
+vsquid:S1192-"SDefine a constant instead of duplicating this literal "semestreEstagiario" 3 times.(Ìÿ‘Íøÿÿÿÿ8ûÍÎò,
+rsquid:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ŞÜÏò,
+µsquid:S1192"–Define a constant instead of duplicating this literal "FROM atendimento a JOIN sala s ON a.sala=s.id JOIN estagiario e ON a.estagiario=e.id " 3 times.(æÔ¹ê8ÛìºÏò,
+fsquid:S2095¢"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8äåêÉò,
+lsquid:S1192'"IDefine a constant instead of duplicating this literal "nomeSala" 3 times.(„»¹ûÿÿÿÿ8ûÍÎò,
+rsquid:S2095l"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8äåêÉò,
+esquid:S2095 "GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8äåêÉò,

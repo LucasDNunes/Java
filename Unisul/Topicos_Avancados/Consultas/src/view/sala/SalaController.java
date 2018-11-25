@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import model.estagiario.Estagiario;
 import model.sala.Sala;
 import model.sala.SalaServiceImpl;
 
@@ -40,7 +39,7 @@ public class SalaController {
     @FXML
     private TableColumn<Sala, Number> colNumero;
 
-    private List<Sala> salas =  new ArrayList<>();
+    private List<Sala> salas = new ArrayList<>();
 
     @FXML
     void initialize() {
@@ -70,6 +69,11 @@ public class SalaController {
     @FXML
     void filtrar() {
         salaService.filtrar(txtFiltro, tableView, salas);
+    }
+
+    @FXML
+    void excluirTudo(){
+        salaService.excluirTudo(tableView, salas);
     }
 
 }

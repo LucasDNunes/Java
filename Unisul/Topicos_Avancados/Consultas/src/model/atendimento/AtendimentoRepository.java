@@ -8,6 +8,7 @@ import model.sala.Sala;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -49,7 +50,7 @@ public class AtendimentoRepository {
                                 .build());
             }
         } catch (Exception e) {
-            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+            MensagemUtils.mostraErro("Registro nao encontrado com o id: "+id,e);
         }
 
         return Optional.empty();
@@ -66,7 +67,7 @@ public class AtendimentoRepository {
         return salvarERetornarSalvo(atendimento);
     }
 
-    protected boolean update(Atendimento atendimento){
+    protected boolean update(Atendimento atendimento) {
 
         String sql = "UPDATE atendimento SET sala=?, data=?, hora-inicio=?, hora-fim=?, estagiario=?, WHERE id=?";
         try (Connection conn = Conexao.getConexao()) {
@@ -80,7 +81,7 @@ public class AtendimentoRepository {
             preparedStatement.execute();
             return true;
         } catch (Exception e) {
-            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+            MensagemUtils.mostraErro("Erro ao atualizar Atendimento",e);
         }
         return false;
     }
@@ -94,7 +95,7 @@ public class AtendimentoRepository {
             preparedStatement.execute();
             return true;
         } catch (Exception e) {
-            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+            MensagemUtils.mostraErro("Erro em deletar atendimento",e);
         }
         return false;
     }
@@ -141,13 +142,13 @@ public class AtendimentoRepository {
             }
 
         } catch (Exception e) {
-            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+            MensagemUtils.mostraErro("Erro em Salvar",e);
         }
 
         return null;
     }
 
-    public ArrayList<Atendimento> findAll() {
+    public List<Atendimento> findAll() {
 
         ArrayList<Atendimento> atendimentos = new ArrayList<>();
 
@@ -155,12 +156,12 @@ public class AtendimentoRepository {
                 " s.id as salaId, s.nome as nomeSala, s.numero as numeroSala, e.id as estagiarioId, e.nome as nomeEstagiario, " +
                 " e.semestre as semestreEstagiario " +
                 "FROM atendimento a JOIN sala s ON a.sala=s.id JOIN estagiario e ON a.estagiario=e.id " +
-                "ORDER BY a.id";
+                "ORDER BY a.data";
         try (Connection conn = Conexao.getConexao()) {
             PreparedStatement preparedStatement = conn.prepareStatement(sqlSelect);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                atendimentos.add( Atendimento.builder()
+                atendimentos.add(Atendimento.builder()
                         .id(resultSet.getLong("id"))
                         .sala(Sala.builder()
                                 .id(resultSet.getLong("salaId"))
@@ -181,7 +182,7 @@ public class AtendimentoRepository {
             return atendimentos;
 
         } catch (Exception e) {
-            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+            MensagemUtils.mostraErro("Erro em buscar os dados do banco",e);
         }
         return atendimentos;
     }

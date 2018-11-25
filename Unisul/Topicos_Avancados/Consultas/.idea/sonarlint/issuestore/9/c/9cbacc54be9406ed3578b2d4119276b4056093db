@@ -1,14 +1,14 @@
 
+rsquid:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ğÕÏò,
 usquid:S2077"RUse a variable binding mechanism to construct this query instead of concatenation.(Æêå†şÿÿÿÿ8ğÕÏò,
-rsquid:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ğÕÏò,
+jsquid:S1192 "GDefine a constant instead of duplicating this literal "numero" 3 times.(íŒÁ˜ıÿÿÿÿ8ğÕÏò,
 esquid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8Öúºò,
+rsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8ğÕÏò,
+csquid:UselessImportCheck"8Remove this unused import 'model.estagiario.Estagiario'.(íêß¼8ó³‘Ïò,
+rsquid:S20958"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ôÅÏò,
+rsquid:S2095u"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8ğÕÏò,
+msquid:S2095\"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­´Èå8ğÕÏò,
+“squid:S1319o"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(á¿â¨ûÿÿÿÿ8¯ÆÁò,
+rsquid:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ğÕÏò,
 esquid:S2095]"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8Öúºò,
 esquid:S2095v"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8Öúºò,
-csquid:UselessImportCheck"8Remove this unused import 'model.estagiario.Estagiario'.(íêß¼8ó³‘Ïò,
-msquid:S2095\"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­´Èå8ğÕÏò,
-rsquid:S20958"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ôÅÏò,
-“squid:S1319o"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(á¿â¨ûÿÿÿÿ8¯ÆÁò,
-jsquid:S1192 "GDefine a constant instead of duplicating this literal "numero" 3 times.(íŒÁ˜ıÿÿÿÿ8ğÕÏò,
-rsquid:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‡½«ªûÿÿÿÿ8ğÕÏò,
-rsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8ğÕÏò,
-rsquid:S2095u"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æêå†şÿÿÿÿ8ğÕÏò,

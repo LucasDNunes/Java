@@ -1,29 +1,31 @@
 package model.atendimento;
 
 import core.util.MensagemUtils;
+import core.util.TelaUtils;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import model.estagiario.Estagiario;
 import model.estagiario.EstagiarioRepository;
 import model.sala.Sala;
 import model.sala.SalaRepository;
 import view.cadastrosala.edicaoAtendimento.EdicaoCadastroController;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class AtendimentoServiceImpl extends AtendimentoRepository implements AtendimentoService{
+public class AtendimentoServiceImpl extends AtendimentoRepository implements AtendimentoService {
 
-    private static final DateTimeFormatter DATAFORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter DATA_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     private SalaRepository salaRepository = new SalaRepository();
     private EstagiarioRepository estagiarioRepository = new EstagiarioRepository();
@@ -52,7 +54,9 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
         Atendimento atendimento = objectMap(cbSala, cbEstagiario, dpData, txtHoraInicio, txtHoraFim);
         Atendimento salvo = salvar(atendimento);
         atendimentos.add(salvo);
-        tableView.setItems(FXCollections.observableArrayList(atendimentos));
+        List<Atendimento> nova = atendimentos.stream()
+                .sorted(Comparator.comparing(Atendimento::getData)).collect(Collectors.toList());
+        tableView.setItems(FXCollections.observableArrayList(nova));
         limparTela(cbSala, cbEstagiario, dpData, txtHoraInicio, txtHoraFim);
         MensagemUtils.mostraMensagem("Atendimento Cadastrado!", Alert.AlertType.INFORMATION);
     }
@@ -74,23 +78,25 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
 
     @Override
     public void editarSelecionado(Button btnEditar, TableView<Atendimento> tableView, List<Atendimento> atendimentos) {
+
         Atendimento atendimento = tableView.getSelectionModel().getSelectedItem();
-        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../view/cadastrosala/edicaoAtendimento/EdicaoCadastro.fxml"));
+        Stage stage;
         try {
 
-            FXMLLoader loader =  new FXMLLoader(getClass().getResource("../../view/cadastrosala/edicaoAtendimento/EdicaoCadastro.fxml"));
             Parent root = loader.load();
-            stage.setScene(new Scene(root));
-            stage.initOwner(btnEditar.getScene().getWindow());
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.setResizable(false);
-            stage.initStyle(StageStyle.UNDECORATED);
-
+            stage = TelaUtils.setarStage(root);
             EdicaoCadastroController edicaoController = loader.getController();
             edicaoController.atualizarEstagiario(atendimento);
+
+            stage.setOnCloseRequest(e -> {
+                edicaoController.atualiar();
+                tableView.setItems(FXCollections.observableArrayList(super.findAll()));
+            });
+
             stage.show();
         } catch (Exception e) {
-            MensagemUtils.mostraMensagem(e.getMessage(), Alert.AlertType.ERROR);
+            MensagemUtils.mostraErro(MensagemUtils.ERRO, e);
         }
         btnEditar.setDisable(true);
     }
@@ -109,6 +115,36 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
         btnExcluir.setDisable(true);
     }
 
+    @Override
+    public void filtrarDataDiaHoje(CheckBox chDataHj, TableView<Atendimento> tableView, List<Atendimento> atendimentos) {
+        if (chDataHj.isSelected()) {
+
+            List<Atendimento> nova = atendimentos.stream()
+                    .filter(a -> a.getData().equals(LocalDate.now()))
+                    .sorted(Comparator.comparing(Atendimento::getData))
+                    .sorted(Comparator.comparing(Atendimento::getHoraAtendimentoInicio))
+                    .collect(Collectors.toList());
+
+            tableView.setItems(FXCollections.observableArrayList(nova));
+        } else {
+            tableView.setItems(FXCollections.observableArrayList(atendimentos));
+        }
+    }
+
+    @Override
+    public void excluirTudo(TableView<Atendimento> tableView, List<Atendimento> atendimentos) {
+        ObservableList<Atendimento> at = tableView.getItems();
+        boolean pergunta = MensagemUtils.mostraMensagemPergunta("Excluir todas as sala?");
+
+        if (pergunta) {
+            for (Atendimento atendimento: at) {
+                excluir(atendimento.getId());
+                atendimentos.remove(atendimento);
+            }
+            tableView.setItems(FXCollections.observableArrayList(atendimentos));
+        }
+    }
+
     private void preencheEstagiarioESala(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario) {
         ArrayList<Sala> salas = salaRepository.findAll();
         ArrayList<Estagiario> estagiarios = estagiarioRepository.findAll();
@@ -120,9 +156,9 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
     private void inicarTableView(TableColumn<Atendimento, String> colSala, TableColumn<Atendimento, String> colEstagiario, TableColumn<Atendimento, String> colDia, TableColumn<Atendimento, String> colHora) {
         colSala.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getSala().getNome()));
         colEstagiario.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getEstagiario().getNome()));
-        colDia.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getData().format(DATAFORMATTER)));
+        colDia.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getData().format(DATA_FORMATTER)));
         colHora.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getHoraAtendimentoInicio()
-                +" até " + c.getValue().getHoraAtendimentoFim()));
+                + " - " + c.getValue().getHoraAtendimentoFim()));
     }
 
     private void listarAtendimento(TableView<Atendimento> tableView, List<Atendimento> atendimentos) {
@@ -130,6 +166,12 @@ public class AtendimentoServiceImpl extends AtendimentoRepository implements Ate
         atendimentos.clear();
         atendimentos.addAll(findAll());
 
-        tableView.setItems(FXCollections.observableArrayList(atendimentos));
+        List<Atendimento> ordanada = atendimentos.stream()
+                .sorted(Comparator.comparing(Atendimento::getData)
+                        .thenComparing(Atendimento::getHoraAtendimentoInicio))
+                .collect(Collectors.toList());
+
+        tableView.setItems(FXCollections.observableArrayList(ordanada));
     }
+
 }

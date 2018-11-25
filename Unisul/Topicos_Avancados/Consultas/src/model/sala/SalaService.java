@@ -24,4 +24,6 @@ public interface SalaService {
     void excluirSelecionado(Button btnExcluir, TableView<Sala> tableView, List<Sala> estagiarios);
 
     void filtrar(TextField txtFiltro, TableView<Sala> tableView, List<Sala> estagiarios);
+
+    void excluirTudo(TableView<Sala> tableView, List<Sala> salas);
 }

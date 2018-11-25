@@ -1,5 +1,6 @@
 package model.atendimento.edicaoAtendimento;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -9,7 +10,7 @@ import model.sala.Sala;
 
 public interface EdicaoAtendimentoService {
 
-    void initialize(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario);
+    void initialize(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario, Button btnAtualizar);
 
     Atendimento objectMap(TextField txtNome, TextField txtSemestre, ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario, DatePicker dpData);
 

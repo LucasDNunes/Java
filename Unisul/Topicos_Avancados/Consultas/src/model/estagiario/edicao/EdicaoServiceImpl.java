@@ -1,14 +1,16 @@
 package model.estagiario.edicao;
 
+import java.io.IOException;
+
 import core.util.MensagemUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.estagiario.Estagiario;
 import model.estagiario.EstagiarioRepository;
-
-import java.io.IOException;
 
 public class EdicaoServiceImpl extends EstagiarioRepository implements EdicaoService{
 
@@ -20,7 +22,7 @@ public class EdicaoServiceImpl extends EstagiarioRepository implements EdicaoSer
 					.semestre(Integer.parseInt(txtSemestre.getText()))
 					.build();
 		} catch (Exception e) {
-			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
+			MensagemUtils.mostraErro("Preencha todos os campos", e);
 		}
 		return null;
 	}
@@ -44,7 +46,17 @@ public class EdicaoServiceImpl extends EstagiarioRepository implements EdicaoSer
 		}
 
 		Stage se = (Stage) txtNome.getScene().getWindow();
+		
 		se.close();
+	}
+
+	@Override
+	public void initialize(Button btnAtualizar, TextField txtNome) {
+
+		btnAtualizar.setOnAction(e ->{
+			Stage stage = (Stage) txtNome.getScene().getWindow();
+			stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+		});
 	}
 
 }

@@ -67,4 +67,9 @@ public class EstagiarioController {
     void filtrar() {
     	estagiarioService.filtrar(txtFiltro, tableView, estagiarios);
     }
+
+    @FXML
+    void excluirTudo(){
+        estagiarioService.excluirTudo(tableView, estagiarios);
+    }
 }

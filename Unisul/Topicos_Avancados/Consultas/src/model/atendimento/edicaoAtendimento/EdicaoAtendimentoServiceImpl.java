@@ -2,11 +2,9 @@ package model.atendimento.edicaoAtendimento;
 
 import core.util.MensagemUtils;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.atendimento.Atendimento;
 import model.atendimento.AtendimentoRepository;
 import model.estagiario.Estagiario;
@@ -23,9 +21,14 @@ public class EdicaoAtendimentoServiceImpl extends AtendimentoRepository implemen
     private EstagiarioRepository estagiarioRepository = new EstagiarioRepository();
 
     @Override
-    public void initialize(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario) {
+    public void initialize(ComboBox<Sala> cbSala, ComboBox<Estagiario> cbEstagiario, Button btnAtualizar) {
         cbSala.getItems().addAll(salaRepository.findAll());
         cbEstagiario.getItems().addAll(estagiarioRepository.findAll());
+
+        btnAtualizar.setOnAction(e ->{
+            Stage stage = (Stage) cbEstagiario.getScene().getWindow();
+            stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+        });
     }
 
     @Override

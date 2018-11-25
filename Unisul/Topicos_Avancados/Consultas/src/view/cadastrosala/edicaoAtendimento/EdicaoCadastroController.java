@@ -1,6 +1,7 @@
 package view.cadastrosala.edicaoAtendimento;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -11,20 +12,28 @@ import model.sala.Sala;
 
 public class EdicaoCadastroController {
 
-    @FXML private TextField txtHoraInicio;
-    @FXML private TextField txtHoraFim;
+    @FXML
+    private TextField txtHoraInicio;
+    @FXML
+    private TextField txtHoraFim;
 
-    @FXML private ComboBox<Sala> cbSala;
-    @FXML private ComboBox<Estagiario> cbEstagiario;
+    @FXML
+    private ComboBox<Sala> cbSala;
+    @FXML
+    private ComboBox<Estagiario> cbEstagiario;
 
-    @FXML private DatePicker dpData;
+    @FXML
+    private Button btnAtualizar;
+
+    @FXML
+    private DatePicker dpData;
 
     private Atendimento atendimentoPai;
     private EdicaoAtendimentoServiceImpl edicaoAtendimentoService = new EdicaoAtendimentoServiceImpl();
 
     @FXML
     void initialize() {
-        edicaoAtendimentoService.initialize(cbSala, cbEstagiario);
+        edicaoAtendimentoService.initialize(cbSala, cbEstagiario, btnAtualizar);
     }
 
     @FXML
@@ -33,7 +42,7 @@ public class EdicaoCadastroController {
     }
 
     @FXML
-    private void atualiar() {
+    public void atualiar() {
         edicaoAtendimentoService.atualizar(txtHoraInicio, txtHoraFim, cbSala, cbEstagiario, dpData, this.atendimentoPai);
     }
 
@@ -42,7 +51,7 @@ public class EdicaoCadastroController {
         cbEstagiario.getSelectionModel().select(atendimento.getEstagiario());
         cbSala.getSelectionModel().select(atendimento.getSala());
         dpData.setValue(atendimento.getData());
-        txtHoraInicio.setText(atendimento.getHoraAtendimentoInicio().getHour()+"");
-        txtHoraFim.setText(atendimento.getHoraAtendimentoFim().getHour()+"");
+        txtHoraInicio.setText(atendimento.getHoraAtendimentoInicio().getHour() + "");
+        txtHoraFim.setText(atendimento.getHoraAtendimentoFim().getHour() + "");
     }
 }

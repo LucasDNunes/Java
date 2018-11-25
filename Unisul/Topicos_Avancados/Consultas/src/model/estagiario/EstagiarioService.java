@@ -24,4 +24,6 @@ public interface EstagiarioService {
 	void excluirSelecionado(Button btnExcluir, TableView<Estagiario> tableView, List<Estagiario> estagiarios);
 	
 	void filtrar(TextField txtFiltro, TableView<Estagiario> tableView, List<Estagiario> estagiarios);
+
+	void excluirTudo(TableView<Estagiario> tableView, List<Estagiario> estagiarios);
 }

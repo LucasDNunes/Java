@@ -31,7 +31,7 @@ public class EstagiarioRepository {
 								.build());
 			}
 		} catch (Exception e) {
-			MensagemUtils.mostraMensagem(e.getMessage(), AlertType.ERROR);
+			MensagemUtils.mostraErro("Registro nao encontrado com o id:"+ id,e);
 		}
 
 		return Optional.empty();
