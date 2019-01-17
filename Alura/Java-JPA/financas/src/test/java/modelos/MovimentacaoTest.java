@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -178,6 +179,83 @@ public class MovimentacaoTest {
             System.out.println("Titular: ".concat(c.getTitular()));
             System.out.println("Movimentacao: ".concat(c.getMovimentacoes().toString()));
         });
+
+        manager.getTransaction().commit();
+        manager.close();
+    }
+
+    @Test
+    public void testSomaMovimetacoes() {
+        EntityManager manager = new JPAUtil().getEntityManager();
+        manager.getTransaction().begin();
+
+        Conta conta = Conta.builder()
+                .id(15L)
+                .build();
+
+        String jqlt = "SELECT SUM(m.valor) FROM Movimentacao m WHERE m.conta = :pConta " +
+                "AND m.tipo = :pTipo " +
+                "ORDER BY m.valor DESC";
+        Query query = manager.createQuery(jqlt);
+        query.setParameter("pConta", conta);
+        query.setParameter("pTipo", TipoMovimentacao.SAIDA);
+
+        BigDecimal result = (BigDecimal) query.getSingleResult();
+        Assert.assertNotNull(result);
+
+        System.out.println("Soma: ".concat(result.toString()));
+
+        manager.getTransaction().commit();
+        manager.close();
+    }
+
+    @Test
+    public void testMediaMovimetacoes() {
+        EntityManager manager = new JPAUtil().getEntityManager();
+        manager.getTransaction().begin();
+
+        Conta conta = Conta.builder()
+                .id(15L)
+                .build();
+
+        String jqlt = "SELECT AVG(m.valor) FROM Movimentacao m WHERE m.conta = :pConta " +
+                "AND m.tipo = :pTipo " +
+                "ORDER BY m.valor DESC";
+        Query query = manager.createQuery(jqlt);
+        query.setParameter("pConta", conta);
+        query.setParameter("pTipo", TipoMovimentacao.SAIDA);
+
+        Double result = (Double) query.getSingleResult();
+        Assert.assertNotNull(result);
+
+        System.out.println("Média: ".concat(result.toString()));
+
+        manager.getTransaction().commit();
+        manager.close();
+    }
+
+    @Test
+    public void testMediaPorDiaMovimetacoes() {
+        EntityManager manager = new JPAUtil().getEntityManager();
+        manager.getTransaction().begin();
+
+        Conta conta = Conta.builder()
+                .id(15L)
+                .build();
+
+        String jqlt = "SELECT AVG(m.valor) FROM Movimentacao m WHERE m.conta = :pConta " +
+                "AND m.tipo = :pTipo " +
+                "GROUP BY DAY(m.data), MONTH(data), YEAR(data)";
+
+        TypedQuery<Double> query = manager.createQuery(jqlt, Double.class);
+        query.setParameter("pConta", conta);
+        query.setParameter("pTipo", TipoMovimentacao.SAIDA);
+
+        List<Double> result = (List<Double>) query.getResultList();
+        Assert.assertNotNull(result);
+
+        System.out.println("Média dia 26: " + result.get(0));
+        System.out.println("Média dia 27: " + result.get(1));
 
         manager.getTransaction().commit();
         manager.close();
