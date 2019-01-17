@@ -143,4 +143,43 @@ public class MovimentacaoTest {
         manager.getTransaction().commit();
         manager.close();
     }
+
+    @Test
+    public void testBuscaPorConta() {
+        EntityManager manager = new JPAUtil().getEntityManager();
+        manager.getTransaction().begin();
+
+        Movimentacao movimentacao = manager.find(Movimentacao.class, 3L);
+        Assert.assertNotNull(movimentacao);
+        Conta conta = movimentacao.getConta();
+
+        Assert.assertNotNull(conta);
+        System.out.println(conta.getTitular());
+        System.out.println(conta.getMovimentacoes().size());
+
+
+        manager.getTransaction().commit();
+        manager.close();
+    }
+
+    @Test
+    public void testBuscaPorTodasContas() {
+        EntityManager manager = new JPAUtil().getEntityManager();
+        manager.getTransaction().begin();
+
+        String jpql = "SELECT DISTINCT c FROM Conta c LEFT JOIN FETCH c.movimentacoes";
+
+        Query query = manager.createQuery(jpql);
+
+        List<Conta> contas = query.getResultList();
+        Assert.assertNotNull(contas);
+
+        contas.forEach(c -> {
+            System.out.println("Titular: ".concat(c.getTitular()));
+            System.out.println("Movimentacao: ".concat(c.getMovimentacoes().toString()));
+        });
+
+        manager.getTransaction().commit();
+        manager.close();
+    }
 }
