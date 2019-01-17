@@ -3,6 +3,12 @@
 
 *.iml
 
-target/
+*/target/*
 
-*.idea/
+*/.idea/*
+
+*.lst
+
+CodeSignal/CodeSignal/\.idea/
+
+Alura/Java-JPA/financas/\.idea/
