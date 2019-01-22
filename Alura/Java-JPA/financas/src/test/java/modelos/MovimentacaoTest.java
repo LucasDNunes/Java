@@ -1,6 +1,7 @@
 package modelos;
 
 import Util.JPAUtil;
+import dao.MovimentacaoDao;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -243,15 +244,10 @@ public class MovimentacaoTest {
                 .id(15L)
                 .build();
 
-        String jqlt = "SELECT AVG(m.valor) FROM Movimentacao m WHERE m.conta = :pConta " +
-                "AND m.tipo = :pTipo " +
-                "GROUP BY DAY(m.data), MONTH(data), YEAR(data)";
+        MovimentacaoDao dao = new MovimentacaoDao(manager);
 
-        TypedQuery<Double> query = manager.createQuery(jqlt, Double.class);
-        query.setParameter("pConta", conta);
-        query.setParameter("pTipo", TipoMovimentacao.SAIDA);
+        List<Double> result = dao.getMediaPorDiaETipo(TipoMovimentacao.SAIDA, conta);
 
-        List<Double> result = (List<Double>) query.getResultList();
         Assert.assertNotNull(result);
 
         System.out.println("Média dia 26: " + result.get(0));
